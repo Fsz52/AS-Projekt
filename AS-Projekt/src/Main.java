@@ -8,6 +8,6 @@
  *
  * @author Tim
  */
-public class DBConnector {
+public class Main {
     
 }
