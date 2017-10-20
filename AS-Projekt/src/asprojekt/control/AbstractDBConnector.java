@@ -54,9 +54,9 @@ public class AbstractDBConnector {
 
     public static void getData() {
         
-        user = "";
-        db = "";
-        pw = "";
+        user = "oszimtas\r\n";
+        db = "jdbc:mariadb://nilssonsound.de:3306/Projekt/oszimttim\r\n";
+        pw = "abc()42V=s1";
 
     }
 
