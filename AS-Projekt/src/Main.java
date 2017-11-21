@@ -8,8 +8,17 @@
  *
  * @author Tim
  */
+
+import asprojekt.control.AbstractDBConnector;
+
 public class Main {
+    
+    
+    
     public static void main(String[] args) {
+        AbstractDBConnector dbconnector = new AbstractDBConnector();
+        dbconnector.getConnection();
+        
         
     }
 }
