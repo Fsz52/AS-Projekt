@@ -14,7 +14,16 @@ public class Geraet {
     int snNr;
     double anschPreis;
     Raum raum;
-    String raumNr;
+    String raumNr = raum.raumNr;
+
+    public Geraet(int snNr, double anschPreis, Raum raum, String standort) {
+        this.snNr = snNr;
+        this.anschPreis = anschPreis;
+        this.raum = raum;
+        this.standort = standort;
+    }
+    
+    
 
     public Raum getRaum() {
         return raum;
