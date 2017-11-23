@@ -39,7 +39,7 @@ public class RaumDAO extends AbstractDBConnector {
                 raeume.add(r);
             }
         } catch (SQLException ex) {
-            Logger.getLogger(DozentDAO.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(RaumDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
         closeConnection();
         return raeume;
