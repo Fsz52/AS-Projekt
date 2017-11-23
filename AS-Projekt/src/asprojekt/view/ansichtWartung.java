@@ -3,11 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package asprojekt.view.ansicht;
+package asprojekt.view;
 
 import javax.swing.JFrame;
-import asprojekt.view.hinzufuegen.hinzuMitarbeiter;
-import asprojekt.view.hinzufuegen.hinzuWartung;
 
 /**
  *

@@ -5,12 +5,9 @@
  */
 package asprojekt.view;
 
-import asprojekt.view.ansicht.ansichtWartung;
 import java.awt.Color;
 import javax.swing.ButtonGroup;
 import javax.swing.JFrame;
-import asprojekt.view.hinzufuegen.hinzuGeraet;
-import asprojekt.view.hinzufuegen.hinzuMitarbeiter;
 
 /**
  *
