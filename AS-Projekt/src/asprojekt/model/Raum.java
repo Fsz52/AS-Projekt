@@ -10,7 +10,7 @@ package asprojekt.model;
  * @author Leon
  */
 public class Raum {
-    
+    int id;
     String raumNr;
     String gebaeude;
 
@@ -28,6 +28,14 @@ public class Raum {
 
     public void setGebaeude(String gebaeude) {
         this.gebaeude = gebaeude;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
     
     
