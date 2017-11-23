@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JPanelFormInfo">
+  <AuxValues>
+    <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_generateFQN" type="java.lang.Boolean" value="true"/>
+    <AuxValue name="FormSettings_generateMnemonicsCode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_i18nAutoMode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_layoutCodeTarget" type="java.lang.Integer" value="1"/>
+    <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_variablesLocal" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2"/>
+  </AuxValues>
+
+  <Layout>
+    <DimensionLayout dim="0">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" attributes="0">
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <Component id="btnClose" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
+                      <Component id="btnADD" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                          <Component id="lblLetzterBearbeitung" alignment="0" max="32767" attributes="0"/>
+                          <Component id="lblWartungsPro" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblWartungenGes" alignment="0" max="32767" attributes="0"/>
+                          <Component id="lblLetzteWartung" alignment="0" max="32767" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="lblDatumLetzWartun" max="32767" attributes="0"/>
+                          <Component id="lblLetzterBearbeiter" max="32767" attributes="0"/>
+                          <Component id="lblWartungengesAnzeige" alignment="0" max="32767" attributes="0"/>
+                          <Component id="lblNameGeraet" alignment="0" pref="129" max="32767" attributes="0"/>
+                      </Group>
+                  </Group>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+    <DimensionLayout dim="1">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" alignment="0" attributes="0">
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="lblWartungsPro" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="lblNameGeraet" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="lblLetzteWartung" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="lblDatumLetzWartun" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="lblLetzterBearbeitung" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="lblLetzterBearbeiter" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="lblWartungenGes" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="lblWartungengesAnzeige" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="btnClose" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="btnADD" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="0" pref="13" max="32767" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+  </Layout>
+  <SubComponents>
+    <Component class="javax.swing.JLabel" name="lblWartungsPro">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Wartungs Protkoll"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblLetzteWartung">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Letzte Wartung "/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblWartungenGes">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Durchf&#xfc;hte Wartungen "/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="btnClose">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="OK "/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCloseActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="btnADD">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Hinzuf&#xfc;gen"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnADDActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblDatumLetzWartun">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="jLabel5"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblLetzterBearbeitung">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="letzter Bearbeiter/in"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblLetzterBearbeiter">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="jLabel8"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblWartungengesAnzeige">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="jLabel9"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblNameGeraet">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="jLabel10"/>
+      </Properties>
+    </Component>
+  </SubComponents>
+</Form>
