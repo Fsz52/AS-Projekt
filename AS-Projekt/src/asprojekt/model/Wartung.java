@@ -5,20 +5,27 @@
  */
 package asprojekt.model;
 
+import java.sql.Timestamp;
+
 /**
  *
  * @author Leon
  */
 public class Wartung {
-    
-    Mitarbeiter ma;
-    String vorNachname = ma.vorNachname;
-    Raum raum;
-    String rNr = raum.raumNr;
 
-    public Wartung(Mitarbeiter ma, Raum raum) {
+    int wartung_id;
+    Mitarbeiter ma;
+    Raum raum;
+    Timestamp time;
+
+    public Wartung(int wartung_id, Mitarbeiter ma, Raum raum, Timestamp time) {
+        this.wartung_id = wartung_id;
         this.ma = ma;
         this.raum = raum;
+        this.time = time;
+    }
+
+    public Wartung() {
     }
 
     public Mitarbeiter getMa() {
@@ -29,14 +36,6 @@ public class Wartung {
         this.ma = ma;
     }
 
-    public String getVorNachname() {
-        return vorNachname;
-    }
-
-    public void setVorNachname(String vorNachname) {
-        this.vorNachname = vorNachname;
-    }
-
     public Raum getRaum() {
         return raum;
     }
@@ -45,12 +44,20 @@ public class Wartung {
         this.raum = raum;
     }
 
-    public String getrNr() {
-        return rNr;
+    public int getWartung_id() {
+        return wartung_id;
     }
 
-    public void setrNr(String rNr) {
-        this.rNr = rNr;
+    public void setWartung_id(int wartung_id) {
+        this.wartung_id = wartung_id;
+    }
+
+    public Timestamp getTime() {
+        return time;
+    }
+
+    public void setTime(Timestamp time) {
+        this.time = time;
     }
     
     
