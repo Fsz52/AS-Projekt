@@ -29,25 +29,25 @@ public class ansichtMitarbeiter extends javax.swing.JPanel {
 
         lblSichtMIt = new javax.swing.JLabel();
         lblVname = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
+        lblNachname = new javax.swing.JLabel();
+        lblAdresse = new javax.swing.JLabel();
         lblbday = new javax.swing.JLabel();
         btnSafe = new javax.swing.JButton();
         btnBearbeiten = new javax.swing.JButton();
-        txtID = new javax.swing.JTextField();
         txtVorname = new javax.swing.JTextField();
         txtNachname = new javax.swing.JTextField();
         txtAdresse = new javax.swing.JTextField();
         txtBDay = new javax.swing.JTextField();
         btnClear = new javax.swing.JButton();
+        lblMitarbeitID = new javax.swing.JLabel();
 
         lblSichtMIt.setText("Mitarbeiter ID ");
 
         lblVname.setText("Vorname");
 
-        jLabel1.setText("Nachname");
+        lblNachname.setText("Nachname");
 
-        jLabel2.setText("Adresse");
+        lblAdresse.setText("Adresse");
 
         lblbday.setText("Geburstag");
 
@@ -65,8 +65,6 @@ public class ansichtMitarbeiter extends javax.swing.JPanel {
                 btnBearbeitenActionPerformed(evt);
             }
         });
-
-        txtID.setEnabled(false);
 
         txtVorname.setText("jTextField8");
         txtVorname.setEnabled(false);
@@ -88,6 +86,8 @@ public class ansichtMitarbeiter extends javax.swing.JPanel {
             }
         });
 
+        lblMitarbeitID.setText("jLabel3");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -97,10 +97,10 @@ public class ansichtMitarbeiter extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(lblAdresse, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(lblSichtMIt, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(lblVname, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(lblNachname, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(lblbday, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -108,7 +108,7 @@ public class ansichtMitarbeiter extends javax.swing.JPanel {
                             .addComponent(txtNachname)
                             .addComponent(txtAdresse)
                             .addComponent(txtVorname)
-                            .addComponent(txtID)))
+                            .addComponent(lblMitarbeitID, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(btnSafe)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -124,18 +124,18 @@ public class ansichtMitarbeiter extends javax.swing.JPanel {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblSichtMIt)
-                    .addComponent(txtID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(lblMitarbeitID))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblVname)
                     .addComponent(txtVorname, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(6, 6, 6)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
+                    .addComponent(lblNachname)
                     .addComponent(txtNachname, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(6, 6, 6)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
+                    .addComponent(lblAdresse)
                     .addComponent(txtAdresse, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -157,7 +157,6 @@ public class ansichtMitarbeiter extends javax.swing.JPanel {
         btnBearbeiten.setEnabled(true);
         txtAdresse.setEnabled(false);
         txtBDay.setEnabled(false);
-        txtID.setEnabled(false);
         txtNachname.setEnabled(false);
         txtVorname.setEnabled(false);
         // </editor-fold>  
@@ -191,14 +190,14 @@ public class ansichtMitarbeiter extends javax.swing.JPanel {
     private javax.swing.JButton btnBearbeiten;
     private javax.swing.JButton btnClear;
     private javax.swing.JButton btnSafe;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel lblAdresse;
+    private javax.swing.JLabel lblMitarbeitID;
+    private javax.swing.JLabel lblNachname;
     private javax.swing.JLabel lblSichtMIt;
     private javax.swing.JLabel lblVname;
     private javax.swing.JLabel lblbday;
     private javax.swing.JTextField txtAdresse;
     private javax.swing.JTextField txtBDay;
-    private javax.swing.JTextField txtID;
     private javax.swing.JTextField txtNachname;
     private javax.swing.JTextField txtVorname;
     // End of variables declaration//GEN-END:variables

@@ -89,6 +89,7 @@ public class ansichGeraete extends javax.swing.JPanel {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblueberGaert)
                     .addComponent(lblshowNameg, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -108,7 +109,7 @@ public class ansichGeraete extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblRaumNr)
                     .addComponent(lblRaumNrAnzeige))
-                .addGap(20, 20, 20))
+                .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
 

@@ -21,10 +21,10 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                          <Component id="jLabel2" alignment="0" max="32767" attributes="0"/>
+                          <Component id="lblAdresse" alignment="0" max="32767" attributes="0"/>
                           <Component id="lblSichtMIt" alignment="0" max="32767" attributes="0"/>
                           <Component id="lblVname" alignment="0" max="32767" attributes="0"/>
-                          <Component id="jLabel1" alignment="0" max="32767" attributes="0"/>
+                          <Component id="lblNachname" alignment="0" max="32767" attributes="0"/>
                           <Component id="lblbday" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
@@ -33,7 +33,7 @@
                           <Component id="txtNachname" alignment="0" max="32767" attributes="0"/>
                           <Component id="txtAdresse" alignment="0" max="32767" attributes="0"/>
                           <Component id="txtVorname" max="32767" attributes="0"/>
-                          <Component id="txtID" alignment="0" max="32767" attributes="0"/>
+                          <Component id="lblMitarbeitID" alignment="0" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
@@ -55,7 +55,7 @@
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="lblSichtMIt" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="txtID" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="lblMitarbeitID" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
@@ -64,12 +64,12 @@
               </Group>
               <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="jLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="lblNachname" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="txtNachname" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="lblAdresse" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="txtAdresse" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
@@ -99,12 +99,12 @@
         <Property name="text" type="java.lang.String" value="Vorname"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel1">
+    <Component class="javax.swing.JLabel" name="lblNachname">
       <Properties>
         <Property name="text" type="java.lang.String" value="Nachname"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel2">
+    <Component class="javax.swing.JLabel" name="lblAdresse">
       <Properties>
         <Property name="text" type="java.lang.String" value="Adresse"/>
       </Properties>
@@ -130,11 +130,6 @@
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnBearbeitenActionPerformed"/>
       </Events>
-    </Component>
-    <Component class="javax.swing.JTextField" name="txtID">
-      <Properties>
-        <Property name="enabled" type="boolean" value="false"/>
-      </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="txtVorname">
       <Properties>
@@ -168,6 +163,11 @@
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnClearActionPerformed"/>
       </Events>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblMitarbeitID">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="jLabel3"/>
+      </Properties>
     </Component>
   </SubComponents>
 </Form>
