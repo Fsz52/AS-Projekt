@@ -11,19 +11,37 @@ package asprojekt.model;
  */
 public class Geraet {
 
-    int snNr;
+    int p_geraete_id;
+    String sn;
     double anschPreis;
     Raum raum;
-    String raumNr = raum.raumNr;
+    NetKonfig netconfig;
+    String standort;
 
-    public Geraet(int snNr, double anschPreis, Raum raum, String standort) {
-        this.snNr = snNr;
+    public Geraet(int p_geraete_id, String sn, double anschPreis, Raum raum, String standort,NetKonfig netconfig) {
+        this.p_geraete_id = p_geraete_id;
         this.anschPreis = anschPreis;
         this.raum = raum;
         this.standort = standort;
+        this.sn = sn;
+        this.netconfig = netconfig;
     }
-    
-    
+
+    public int getP_geraete_id() {
+        return p_geraete_id;
+    }
+
+    public void setP_geraete_id(int p_geraete_id) {
+        this.p_geraete_id = p_geraete_id;
+    }
+
+    public String getSn() {
+        return sn;
+    }
+
+    public void setSn(String sn) {
+        this.sn = sn;
+    }
 
     public Raum getRaum() {
         return raum;
@@ -33,22 +51,6 @@ public class Geraet {
         this.raum = raum;
     }
 
-    public String getRaumNr() {
-        return raumNr;
-    }
-
-    public void setRaumNr(String raumNr) {
-        this.raum.raumNr = this.raumNr;
-    }
-    String standort;
-
-    public int getSnNr() {
-        return snNr;
-    }
-
-    public void setSnNr(int snNr) {
-        this.snNr = snNr;
-    }
 
     public double getAnschPreis() {
         return anschPreis;
@@ -65,5 +67,20 @@ public class Geraet {
     public void setStandort(String standort) {
         this.standort = standort;
     }
+
+    @Override
+    public String toString() {
+        return netconfig.dns_name;
+    }
+
+    public NetKonfig getNetconfig() {
+        return netconfig;
+    }
+
+    public void setNetconfig(NetKonfig netconfig) {
+        this.netconfig = netconfig;
+    }
+    
+    
 
 }

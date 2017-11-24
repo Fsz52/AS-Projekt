@@ -9,10 +9,7 @@
  * @author Tim
  */
 import asprojekt.control.AbstractDBConnector;
-import asprojekt.control.RaumDAO;
-import asprojekt.model.Raum;
 import asprojekt.view.Hauptmenue;
-import java.util.ArrayList;
 import javax.swing.JFrame;
 
 public class Main {
@@ -21,12 +18,6 @@ public class Main {
         AbstractDBConnector dbconnector = new AbstractDBConnector();
         dbconnector.getConnection();
 
-        RaumDAO rDAO = new RaumDAO();
-        ArrayList<Raum> alleRaeume = rDAO.readAll();
-        for (Raum raum : alleRaeume) {
-            System.out.println(raum.getRaumNr());
-
-        }
         JFrame jf = new JFrame("Krass Bruder");
 
         jf.setSize(600, 600);

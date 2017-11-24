@@ -14,6 +14,16 @@ public class Raum {
     String raumNr;
     String gebaeude;
 
+    public Raum(int id, String raumNr, String gebaeude) {
+        this.id = id;
+        this.raumNr = raumNr;
+        this.gebaeude = gebaeude;
+    }
+
+    public Raum() {
+    }
+
+    
     public String getRaumNr() {
         return raumNr;
     }
@@ -36,6 +46,11 @@ public class Raum {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    @Override
+    public String toString() {
+        return "Raum: " + raumNr + ", Gebaeude: " + gebaeude;
     }
     
     
