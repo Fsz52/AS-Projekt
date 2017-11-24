@@ -34,21 +34,25 @@ public class GeraetDAO extends AbstractDBConnector {
                 int f_raum_nr = rs.getInt(3);
                 String standort = rs.getString(4);
                 double anschPreis = rs.getDouble(5);
-                int p_raum_id = rs.getInt(6);
-                String gebaeude = rs.getString(7);
-                String raumBez = rs.getString(8);
+                boolean isSwitch = false;
+                    if (rs.getInt(6) == 1){
+                        isSwitch = true;
+                    }
+                int p_raum_id = rs.getInt(7);
+                String gebaeude = rs.getString(8);
+                String raumBez = rs.getString(9);
 
-                Integer f_geraeteID = rs.getInt(9);
-                String mac = rs.getString(10);
-                String dns_name = rs.getString(11);
-                double uebertragungsrate = rs.getDouble(12);
-                String netzmaske = rs.getString(13);
-                String ip_adresse = rs.getString(14);
-                String dns_server = rs.getString(15);
+                Integer f_geraeteID = rs.getInt(10);
+                String mac = rs.getString(11);
+                String dns_name = rs.getString(12);
+                double uebertragungsrate = rs.getDouble(13);
+                String netzmaske = rs.getString(14);
+                String ip_adresse = rs.getString(15);
+                String dns_server = rs.getString(16);
 
                 Raum raum = new Raum(p_raum_id, raumBez, gebaeude);
                 NetKonfig netzkonfig = new NetKonfig(f_geraeteID, mac, dns_name, uebertragungsrate, netzmaske, ip_adresse, dns_server);
-                Geraet g = new Geraet(p_geraete_id, sn, anschPreis, raum, standort, netzkonfig);
+                Geraet g = new Geraet(p_geraete_id, sn, anschPreis, raum, standort, netzkonfig, isSwitch);
                 geraete.add(g);
 
             }

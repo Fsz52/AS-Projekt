@@ -17,14 +17,16 @@ public class Geraet {
     Raum raum;
     NetKonfig netconfig;
     String standort;
+    boolean isSwitch;
 
-    public Geraet(int p_geraete_id, String sn, double anschPreis, Raum raum, String standort,NetKonfig netconfig) {
+    public Geraet(int p_geraete_id, String sn, double anschPreis, Raum raum, String standort,NetKonfig netconfig, boolean isSwitch) {
         this.p_geraete_id = p_geraete_id;
         this.anschPreis = anschPreis;
         this.raum = raum;
         this.standort = standort;
         this.sn = sn;
         this.netconfig = netconfig;
+        this.isSwitch = isSwitch;
     }
 
     public int getP_geraete_id() {
@@ -80,6 +82,16 @@ public class Geraet {
     public void setNetconfig(NetKonfig netconfig) {
         this.netconfig = netconfig;
     }
+
+    public boolean isIsSwitch() {
+        return isSwitch;
+    }
+
+    public void setIsSwitch(boolean isSwitch) {
+        this.isSwitch = isSwitch;
+    }
+    
+    
     
     
 
