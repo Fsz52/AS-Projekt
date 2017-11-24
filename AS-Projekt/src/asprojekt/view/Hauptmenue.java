@@ -20,7 +20,7 @@ import javax.swing.ListSelectionModel;
  */
 public class Hauptmenue extends javax.swing.JPanel {
 
-    private ansichGeraete geraete = new ansichGeraete();
+    private ansichtGeraete geraete = new ansichtGeraete();
     private ansichtMitarbeiter mitarbeiter = new ansichtMitarbeiter();
 
     public Hauptmenue() {
@@ -245,9 +245,10 @@ public class Hauptmenue extends javax.swing.JPanel {
         btnmore.setEnabled(true);
 
         if (jbtnGeraete.isSelected()) {
-            plnMenu.add(geraete);
-            geraete.setSize(plnMenu.getWidth(), plnMenu.getHeight());
-            geraete.setVisible(true);
+            ansichtGeraete anG = new ansichtGeraete((Geraet)lstUebersicht.getSelectedValue());
+            plnMenu.add(anG);
+            anG.setSize(plnMenu.getWidth(), plnMenu.getHeight());
+            anG.setVisible(true);
             plnMenu.revalidate();
         } else {
             plnMenu.add(mitarbeiter);

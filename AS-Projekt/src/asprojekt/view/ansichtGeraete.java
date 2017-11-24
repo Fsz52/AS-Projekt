@@ -5,17 +5,32 @@
  */
 package asprojekt.view;
 
+import asprojekt.model.Geraet;
+
 /**
  *
  * @author Kenny Ahlwarth
  */
-public class ansichGeraete extends javax.swing.JPanel {
+public class ansichtGeraete extends javax.swing.JPanel {
 
     /**
      * Creates new form ansichGeraete
      */
-    public ansichGeraete() {
+    public ansichtGeraete() {
         initComponents();
+    }
+        public ansichtGeraete(Geraet g) {
+        initComponents();
+        setInfos(g);
+    }
+        
+    public void setInfos(Geraet g){
+        
+        lblshowNameG.setText(g.getNetconfig().getDns_name());
+        lblShSnNR.setText(g.getSn());
+        lblshowPreis.setText(String.valueOf(g.getAnschPreis()));
+        lblshowOrt.setText(g.getStandort());
+        lblShowRaum.setText(g.getRaum().getRaumNr());
     }
 
     /**
@@ -28,7 +43,7 @@ public class ansichGeraete extends javax.swing.JPanel {
     private void initComponents() {
 
         lblueberGaert = new javax.swing.JLabel();
-        lblshowNameg = new javax.swing.JLabel();
+        lblshowNameG = new javax.swing.JLabel();
         lblSnNr = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         lblOrt = new javax.swing.JLabel();
@@ -36,11 +51,11 @@ public class ansichGeraete extends javax.swing.JPanel {
         lblshowPreis = new javax.swing.JLabel();
         lblshowOrt = new javax.swing.JLabel();
         lblRaumNr = new javax.swing.JLabel();
-        lblRaumNrAnzeige = new javax.swing.JLabel();
+        lblShowRaum = new javax.swing.JLabel();
 
         lblueberGaert.setText("Gerät Übersicht");
 
-        lblshowNameg.setText("jLabel1");
+        lblshowNameG.setText("jLabel1");
 
         lblSnNr.setText("Serien-Nr");
 
@@ -56,7 +71,7 @@ public class ansichGeraete extends javax.swing.JPanel {
 
         lblRaumNr.setText("Raum-Nr.");
 
-        lblRaumNrAnzeige.setText("jLabel2");
+        lblShowRaum.setText("jLabel2");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -68,7 +83,7 @@ public class ansichGeraete extends javax.swing.JPanel {
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(lblRaumNr, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(lblRaumNrAnzeige, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(lblShowRaum, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
@@ -81,7 +96,7 @@ public class ansichGeraete extends javax.swing.JPanel {
                                 .addComponent(lblueberGaert, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addGap(5, 5, 5)))
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lblshowNameg, javax.swing.GroupLayout.DEFAULT_SIZE, 240, Short.MAX_VALUE)
+                            .addComponent(lblshowNameG, javax.swing.GroupLayout.DEFAULT_SIZE, 240, Short.MAX_VALUE)
                             .addComponent(lblShSnNR, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(lblshowPreis, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(lblshowOrt, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
@@ -92,7 +107,7 @@ public class ansichGeraete extends javax.swing.JPanel {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblueberGaert)
-                    .addComponent(lblshowNameg, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(lblshowNameG, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblSnNr)
@@ -108,7 +123,7 @@ public class ansichGeraete extends javax.swing.JPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblRaumNr)
-                    .addComponent(lblRaumNrAnzeige))
+                    .addComponent(lblShowRaum))
                 .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
@@ -118,10 +133,10 @@ public class ansichGeraete extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel lblOrt;
     private javax.swing.JLabel lblRaumNr;
-    private javax.swing.JLabel lblRaumNrAnzeige;
     private javax.swing.JLabel lblShSnNR;
+    private javax.swing.JLabel lblShowRaum;
     private javax.swing.JLabel lblSnNr;
-    private javax.swing.JLabel lblshowNameg;
+    private javax.swing.JLabel lblshowNameG;
     private javax.swing.JLabel lblshowOrt;
     private javax.swing.JLabel lblshowPreis;
     private javax.swing.JLabel lblueberGaert;
