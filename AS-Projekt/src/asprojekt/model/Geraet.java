@@ -19,7 +19,7 @@ public class Geraet {
     String standort;
     boolean isSwitch;
 
-    public Geraet(int p_geraete_id, String sn, double anschPreis, Raum raum, String standort,NetKonfig netconfig, boolean isSwitch) {
+    public Geraet(int p_geraete_id, String sn, double anschPreis, Raum raum, String standort, NetKonfig netconfig, boolean isSwitch) {
         this.p_geraete_id = p_geraete_id;
         this.anschPreis = anschPreis;
         this.raum = raum;
@@ -52,7 +52,6 @@ public class Geraet {
     public void setRaum(Raum raum) {
         this.raum = raum;
     }
-
 
     public double getAnschPreis() {
         return anschPreis;
@@ -90,9 +89,5 @@ public class Geraet {
     public void setIsSwitch(boolean isSwitch) {
         this.isSwitch = isSwitch;
     }
-    
-    
-    
-    
 
 }

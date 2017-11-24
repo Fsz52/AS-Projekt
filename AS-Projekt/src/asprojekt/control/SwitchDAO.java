@@ -72,4 +72,9 @@ public class SwitchDAO extends AbstractDBConnector {
         closeConnection();
         return switche;
     }
+    
+//    public void addSwitch(Switch sw){
+//        Connection c= getConnection();
+//        PreparedStatement ps = c.prepareStatement("INSERT INTO T_SWITCH")
+//    }
 }

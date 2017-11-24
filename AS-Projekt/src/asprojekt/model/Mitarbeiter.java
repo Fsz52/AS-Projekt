@@ -12,11 +12,20 @@ import java.sql.Date;
  * @author Leon
  */
 public class Mitarbeiter {
-    
+
     int mitarbeiterID;
-    String vorNachname;
+    String vorname;
+    String nachname;
     Date geburtstag;
     String addresse;
+
+    public Mitarbeiter(int mitarbeiterID, String vorname, String nachname, Date geburtstag, String addresse) {
+        this.mitarbeiterID = mitarbeiterID;
+        this.vorname = vorname;
+        this.nachname = nachname;
+        this.geburtstag = geburtstag;
+        this.addresse = addresse;
+    }
 
     public int getMitarbeiterID() {
         return mitarbeiterID;
@@ -26,12 +35,20 @@ public class Mitarbeiter {
         this.mitarbeiterID = mitarbeiterID;
     }
 
-    public String getVorNachname() {
-        return vorNachname;
+    public String getVorname() {
+        return vorname;
     }
 
-    public void setVorNachname(String vorNachname) {
-        this.vorNachname = vorNachname;
+    public void setVorname(String vorname) {
+        this.vorname = vorname;
+    }
+
+    public String getNachname() {
+        return nachname;
+    }
+
+    public void setNachname(String nachname) {
+        this.nachname = nachname;
     }
 
     public Date getGeburtstag() {
@@ -49,7 +66,10 @@ public class Mitarbeiter {
     public void setAddresse(String addresse) {
         this.addresse = addresse;
     }
-    
-    
-    
+
+    @Override
+    public String toString() {
+        return "Mitarbeiter{" + "mitarbeiterID=" + mitarbeiterID + ", vorname=" + vorname + ", nachname=" + nachname + ", geburtstag=" + geburtstag + ", addresse=" + addresse + '}';
+    }
+
 }
