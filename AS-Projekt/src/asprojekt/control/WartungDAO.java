@@ -41,11 +41,11 @@ public class WartungDAO extends AbstractDBConnector {
                 ResultSet rs2 = ps2.executeQuery();
 
                 while (rs2.next()) {
-                    Mitarbeiter ma = new Mitarbeiter(rs.getInt(1),
-                            rs.getString(3),
-                            rs.getString(4),
-                            rs.getDate(5),
-                            rs.getString(2));
+                    Mitarbeiter ma = new Mitarbeiter(rs2.getInt(1),
+                            rs2.getString(3),
+                            rs2.getString(4),
+                            rs2.getDate(5),
+                            rs2.getString(2));
                     wa.setMa(ma);
                 }
                 PreparedStatement ps3 = c.prepareStatement("SELECT * FROM T_Raeume "
