@@ -285,8 +285,9 @@ public class Hauptmenue extends javax.swing.JPanel {
 
     private void btnConfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConfActionPerformed
         JFrame jf = new JFrame("Wartungs Menü");
+        ansichtConfi anC = new ansichtConfi((Geraet)lstUebersicht.getSelectedValue());
         jf.setSize(600, 600);
-        jf.add(new ansichtConfi());
+        jf.add(anC);
         jf.setVisible(true);
 
     }//GEN-LAST:event_btnConfActionPerformed

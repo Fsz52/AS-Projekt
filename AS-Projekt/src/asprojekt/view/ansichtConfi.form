@@ -30,20 +30,25 @@
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="txtMac" max="32767" attributes="0"/>
+                          <Component id="txtDNS_Name" max="32767" attributes="0"/>
                           <Component id="txtRate" max="32767" attributes="0"/>
                           <Component id="txtMaske" alignment="0" max="32767" attributes="0"/>
                           <Component id="txtIP" alignment="0" max="32767" attributes="0"/>
                           <Component id="txtDNS" alignment="0" max="32767" attributes="0"/>
                       </Group>
                   </Group>
-                  <Group type="102" alignment="0" attributes="0">
+                  <Group type="102" attributes="0">
                       <Component id="jButton1" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="jButton2" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="btnClear" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="0" pref="134" max="32767" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="85" max="-2" attributes="0"/>
+                      <Component id="txtMAC" max="32767" attributes="0"/>
                   </Group>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
@@ -57,7 +62,7 @@
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="lblMac" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="txtMac" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtDNS_Name" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
@@ -79,13 +84,18 @@
                   <Component id="lblDNS" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="txtDNS" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="txtMAC" min="-2" max="-2" attributes="0"/>
+                  <Component id="jLabel2" alignment="0" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jButton1" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jButton2" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="btnClear" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace min="0" pref="101" max="32767" attributes="0"/>
+              <EmptySpace min="0" pref="86" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -98,7 +108,7 @@
     </Component>
     <Component class="javax.swing.JLabel" name="lblMac">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Mac"/>
+        <Property name="text" type="java.lang.String" value="DNS-Name"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="lblRate">
@@ -121,7 +131,7 @@
         <Property name="text" type="java.lang.String" value="DNS"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="txtMac">
+    <Component class="javax.swing.JTextField" name="txtDNS_Name">
       <Properties>
         <Property name="text" type="java.lang.String" value="jTextField1"/>
         <Property name="enabled" type="boolean" value="false"/>
@@ -174,6 +184,20 @@
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnClearActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel2">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="MAC"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="txtMAC">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="jTextField5"/>
+        <Property name="enabled" type="boolean" value="false"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtMACActionPerformed"/>
       </Events>
     </Component>
   </SubComponents>

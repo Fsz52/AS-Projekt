@@ -5,6 +5,8 @@
  */
 package asprojekt.view;
 
+import asprojekt.model.Geraet;
+
 /**
  *
  * @author Kenny Ahlwarth
@@ -14,10 +16,25 @@ public class ansichtConfi extends javax.swing.JPanel {
     /**
      * Creates new form ansichtConfi
      */
+    private Geraet g;
     public ansichtConfi() {
         initComponents();
     }
 
+    public ansichtConfi(Geraet g) {
+        initComponents();
+        this.g = g;
+        fillConfig();
+    }
+
+    public void fillConfig(){
+        txtDNS_Name.setText(g.getNetconfig().getDns_name());
+        txtDNS.setText(g.getNetconfig().getDns_server());
+        txtIP.setText(g.getNetconfig().getIp_adresse());
+        txtMAC.setText(g.getNetconfig().getMac());
+        txtMaske.setText(g.getNetconfig().getNetzmaske());
+        txtRate.setText(String.valueOf(g.getNetconfig().getUebertragungsrate()));
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -33,7 +50,7 @@ public class ansichtConfi extends javax.swing.JPanel {
         lblNetzmaske = new javax.swing.JLabel();
         lblIP = new javax.swing.JLabel();
         lblDNS = new javax.swing.JLabel();
-        txtMac = new javax.swing.JTextField();
+        txtDNS_Name = new javax.swing.JTextField();
         txtRate = new javax.swing.JTextField();
         txtMaske = new javax.swing.JTextField();
         txtIP = new javax.swing.JTextField();
@@ -41,10 +58,12 @@ public class ansichtConfi extends javax.swing.JPanel {
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         btnClear = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
+        txtMAC = new javax.swing.JTextField();
 
         jLabel1.setText("Confi");
 
-        lblMac.setText("Mac");
+        lblMac.setText("DNS-Name");
 
         lblRate.setText("Übertragunsrate");
 
@@ -54,8 +73,8 @@ public class ansichtConfi extends javax.swing.JPanel {
 
         lblDNS.setText("DNS");
 
-        txtMac.setText("jTextField1");
-        txtMac.setEnabled(false);
+        txtDNS_Name.setText("jTextField1");
+        txtDNS_Name.setEnabled(false);
 
         txtRate.setText("jTextField2");
         txtRate.setEnabled(false);
@@ -91,6 +110,16 @@ public class ansichtConfi extends javax.swing.JPanel {
             }
         });
 
+        jLabel2.setText("MAC");
+
+        txtMAC.setText("jTextField5");
+        txtMAC.setEnabled(false);
+        txtMAC.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtMACActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -108,7 +137,7 @@ public class ansichtConfi extends javax.swing.JPanel {
                             .addComponent(lblDNS, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtMac)
+                            .addComponent(txtDNS_Name)
                             .addComponent(txtRate)
                             .addComponent(txtMaske)
                             .addComponent(txtIP)
@@ -119,7 +148,11 @@ public class ansichtConfi extends javax.swing.JPanel {
                         .addComponent(jButton2)
                         .addGap(18, 18, 18)
                         .addComponent(btnClear)
-                        .addGap(0, 134, Short.MAX_VALUE)))
+                        .addGap(0, 134, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel2)
+                        .addGap(85, 85, 85)
+                        .addComponent(txtMAC)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -129,7 +162,7 @@ public class ansichtConfi extends javax.swing.JPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblMac)
-                    .addComponent(txtMac, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtDNS_Name, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblRate)
@@ -146,12 +179,16 @@ public class ansichtConfi extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblDNS)
                     .addComponent(txtDNS, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(32, 32, 32)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(txtMAC, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel2))
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton1)
                     .addComponent(jButton2)
                     .addComponent(btnClear))
-                .addGap(0, 101, Short.MAX_VALUE))
+                .addGap(0, 86, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -163,20 +200,24 @@ public class ansichtConfi extends javax.swing.JPanel {
         // TODO add your handling code here:
         txtDNS.setEnabled(true);
         txtIP.setEnabled(true);
-        txtMac.setEnabled(true);
+        txtDNS_Name.setEnabled(true);
         txtMaske.setEnabled(true);
         txtRate.setEnabled(true);
         btnClear.setEnabled(true);
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void btnClearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClearActionPerformed
- 
+
         txtDNS.setText("");
         txtIP.setText("");
-        txtMac.setText("");
+        txtDNS_Name.setText("");
         txtMaske.setText("");
         txtRate.setText("");
     }//GEN-LAST:event_btnClearActionPerformed
+
+    private void txtMACActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtMACActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtMACActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -184,14 +225,16 @@ public class ansichtConfi extends javax.swing.JPanel {
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel lblDNS;
     private javax.swing.JLabel lblIP;
     private javax.swing.JLabel lblMac;
     private javax.swing.JLabel lblNetzmaske;
     private javax.swing.JLabel lblRate;
     private javax.swing.JTextField txtDNS;
+    private javax.swing.JTextField txtDNS_Name;
     private javax.swing.JTextField txtIP;
-    private javax.swing.JTextField txtMac;
+    private javax.swing.JTextField txtMAC;
     private javax.swing.JTextField txtMaske;
     private javax.swing.JTextField txtRate;
     // End of variables declaration//GEN-END:variables
