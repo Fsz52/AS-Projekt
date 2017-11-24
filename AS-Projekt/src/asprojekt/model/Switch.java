@@ -5,6 +5,8 @@
  */
 package asprojekt.model;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author Leon
@@ -13,18 +15,17 @@ public class Switch {
 
     int switchID;
     String model;
-    TrunkPort tport;
-    int tPortNr;
-    AccessPort aport;
-    int aPortNr;
+    ArrayList<Port> ports;
+    int f_geraete_id;
 
-    public Switch(int switchID, String model, TrunkPort tport, int tPortNr, AccessPort aport, int aPortNr) {
+    public Switch(int switchID, String model, int f_geraete_id, ArrayList<Port> ports) {
         this.switchID = switchID;
         this.model = model;
-        this.tport = tport;
-        this.tPortNr = tPortNr;
-        this.aport = aport;
-        this.aPortNr = aPortNr;
+        this.ports = ports;
+        this.f_geraete_id = f_geraete_id;
+    }
+
+    public Switch() {
     }
 
     public int getSwitchID() {
@@ -43,36 +44,29 @@ public class Switch {
         this.model = model;
     }
 
-    public TrunkPort getTport() {
-        return tport;
+    public ArrayList<Port> getPorts() {
+        return ports;
     }
 
-    public void setTport(TrunkPort tport) {
-        this.tport = tport;
+    public void setPorts(ArrayList<Port> ports) {
+        this.ports = ports;
     }
 
-    public int gettPortNr() {
-        return tPortNr;
+    public int getF_geraete_id() {
+        return f_geraete_id;
     }
 
-    public void settPortNr(int tPortNr) {
-        this.tPortNr = tport.tPortNr;
+    public void setF_geraete_id(int f_geraete_id) {
+        this.f_geraete_id = f_geraete_id;
     }
 
-    public AccessPort getAport() {
-        return aport;
+    @Override
+    public String toString() {
+        return "Switch{" + "switchID=" + switchID + ", model=" + model + ", ports=" + ports.toString() + ", f_geraete_id=" + f_geraete_id + '}';
     }
+    
+    
 
-    public void setAport(AccessPort aport) {
-        this.aport = aport;
-    }
-
-    public int getaPortNr() {
-        return aPortNr;
-    }
-
-    public void setaPortNr(int aPortNr) {
-        this.aPortNr = aport.portNr;
-    }
+       
 
 }
