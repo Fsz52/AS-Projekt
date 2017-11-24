@@ -5,9 +5,14 @@
  */
 package asprojekt.view;
 
+import asprojekt.control.GeraetDAO;
+import asprojekt.model.Geraet;
 import java.awt.Color;
+import java.util.ArrayList;
 import javax.swing.ButtonGroup;
+import javax.swing.DefaultListModel;
 import javax.swing.JFrame;
+import javax.swing.ListSelectionModel;
 
 /**
  *
@@ -20,7 +25,7 @@ public class Hauptmenue extends javax.swing.JPanel {
      */
     public Hauptmenue() {
         initComponents();
-
+        this.fillGeraete();
         //Group the radio buttons.
         ButtonGroup auswahl;
 
@@ -55,7 +60,7 @@ public class Hauptmenue extends javax.swing.JPanel {
         buttonGroup1 = new javax.swing.ButtonGroup();
         buttonGroup2 = new javax.swing.ButtonGroup();
         jScrollPane1 = new javax.swing.JScrollPane();
-        lstUebersicht = new javax.swing.JList<>();
+        lstUebersicht = new javax.swing.JList();
         txtSuche = new javax.swing.JTextField();
         btnHinzu = new javax.swing.JButton();
         btnloeschen = new javax.swing.JButton();
@@ -66,10 +71,10 @@ public class Hauptmenue extends javax.swing.JPanel {
         MenuePanel = new javax.swing.JPanel();
         btnmore = new javax.swing.JButton();
 
-        lstUebersicht.setModel(new javax.swing.AbstractListModel<String>() {
+        lstUebersicht.setModel(new javax.swing.AbstractListModel() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
             public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
+            public Object getElementAt(int i) { return strings[i]; }
         });
         lstUebersicht.addListSelectionListener(new javax.swing.event.ListSelectionListener() {
             public void valueChanged(javax.swing.event.ListSelectionEvent evt) {
@@ -210,6 +215,21 @@ public class Hauptmenue extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_btnHinzuActionPerformed
 
+        // Methoden Zum Füllen der Listen
+    public void fillGeraete()
+    {
+        DefaultListModel<Geraet> geraetListModel = new DefaultListModel<>();
+        GeraetDAO gDAO = new GeraetDAO();
+        ArrayList<Geraet> alleGeraete = gDAO.readAll();
+        for (Geraet geraet : alleGeraete)
+        {
+            geraetListModel.addElement(geraet);
+
+        }
+        lstUebersicht.setModel(geraetListModel);
+
+    }
+    
     private void jbtnGeraeteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnGeraeteActionPerformed
         btnWartungen.setVisible(true);
         btnConf.setVisible(true);
@@ -268,7 +288,7 @@ public class Hauptmenue extends javax.swing.JPanel {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JRadioButton jbtnGeraete;
     private javax.swing.JRadioButton jbtnMitarbeiter;
-    private javax.swing.JList<String> lstUebersicht;
+    private javax.swing.JList lstUebersicht;
     private javax.swing.JTextField txtSuche;
     // End of variables declaration//GEN-END:variables
 }
