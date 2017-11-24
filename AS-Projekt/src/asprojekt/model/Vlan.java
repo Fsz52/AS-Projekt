@@ -11,9 +11,25 @@ package asprojekt.model;
  */
 public class Vlan {
     
+    int p_vlan_id;
     int vlanID;
     String gruppe;
     String vlanName;
+
+    public Vlan(int p_vlan_id, int vlanID, String gruppe, String vlanName) {
+        this.p_vlan_id = p_vlan_id;
+        this.vlanID = vlanID;
+        this.gruppe = gruppe;
+        this.vlanName = vlanName;
+    }
+
+    public int getP_vlan_id() {
+        return p_vlan_id;
+    }
+
+    public void setP_vlan_id(int p_vlan_id) {
+        this.p_vlan_id = p_vlan_id;
+    }
 
     public int getVlanID() {
         return vlanID;

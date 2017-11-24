@@ -201,9 +201,12 @@ public class Hauptmenue extends javax.swing.JPanel {
 
         if (jbtnGeraete.isSelected()) {
 
+            hinzuGeraet hG = new hinzuGeraet();
             JFrame jf = new JFrame("Hinzufügen eines Gerätes");
             jf.setSize(400, 250);
-            jf.add(new hinzuGeraet());
+            jf.add(hG);
+            hG.setJf(jf);
+            hG.setHauptmenue(this);
             jf.setVisible(true);
 
         } else {

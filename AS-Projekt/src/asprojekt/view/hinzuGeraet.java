@@ -7,6 +7,7 @@ package asprojekt.view;
 
 import com.sun.java.accessibility.util.AWTEventMonitor;
 import java.awt.event.WindowListener;
+import javax.swing.JFrame;
 import sun.awt.windows.WLightweightFramePeer;
 
 /**
@@ -18,9 +19,20 @@ public class hinzuGeraet extends javax.swing.JPanel {
     /**
      * Creates new form hintuGeraet
      */
+    private JFrame jf;
+    private Hauptmenue hauptmenue;
+
     public hinzuGeraet() {
         initComponents();
 
+    }
+
+    public void setHauptmenue(Hauptmenue hauptmenue) {
+        this.hauptmenue = hauptmenue;
+    }
+
+    public void setJf(JFrame jf) {
+        this.jf = jf;
     }
 
     /**
@@ -174,7 +186,7 @@ public class hinzuGeraet extends javax.swing.JPanel {
 
     private void btnAbbruchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAbbruchActionPerformed
         // TODO add your handling code here:
-        setVisible(false);  
+        jf.dispose();
     }//GEN-LAST:event_btnAbbruchActionPerformed
 
     private void txtRaumNrActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtRaumNrActionPerformed

@@ -76,7 +76,7 @@ public class RaumDAO extends AbstractDBConnector {
         closeConnection();
     }
 
-    public void updateFirma(Raum r) {
+    public void updateRaum(Raum r) {
         String gebaeude = r.getGebaeude();
         String raumnr = r.getRaumNr();
         int raum_id = r.getId();
