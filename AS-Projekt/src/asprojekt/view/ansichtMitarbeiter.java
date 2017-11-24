@@ -31,17 +31,17 @@ public class ansichtMitarbeiter extends javax.swing.JPanel {
         lblVname = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        lblID = new javax.swing.JLabel();
         lblbday = new javax.swing.JLabel();
-        lblVnameShow = new javax.swing.JLabel();
-        lblNnameShow = new javax.swing.JLabel();
-        lblAdresseShow = new javax.swing.JLabel();
-        lblBdayShow = new javax.swing.JLabel();
-        lblStandort = new javax.swing.JLabel();
-        lblStandortAnzeige = new javax.swing.JLabel();
-        btnClose = new javax.swing.JButton();
+        btnSafe = new javax.swing.JButton();
+        btnBearbeiten = new javax.swing.JButton();
+        txtID = new javax.swing.JTextField();
+        txtVorname = new javax.swing.JTextField();
+        txtNachname = new javax.swing.JTextField();
+        txtAdresse = new javax.swing.JTextField();
+        txtBDay = new javax.swing.JTextField();
+        btnClear = new javax.swing.JButton();
 
-        lblSichtMIt.setText("Mitarbeiter Übesicht ");
+        lblSichtMIt.setText("Mitarbeiter ID ");
 
         lblVname.setText("Vorname");
 
@@ -49,26 +49,42 @@ public class ansichtMitarbeiter extends javax.swing.JPanel {
 
         jLabel2.setText("Adresse");
 
-        lblID.setText("jLabel3");
-
         lblbday.setText("Geburstag");
 
-        lblVnameShow.setText("jLabel3");
-
-        lblNnameShow.setText("jLabel4");
-
-        lblAdresseShow.setText("jLabel5");
-
-        lblBdayShow.setText("jLabel6");
-
-        lblStandort.setText("Standort");
-
-        lblStandortAnzeige.setText("jLabel3");
-
-        btnClose.setText("Schließen");
-        btnClose.addActionListener(new java.awt.event.ActionListener() {
+        btnSafe.setText("Speichern");
+        btnSafe.setEnabled(false);
+        btnSafe.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnCloseActionPerformed(evt);
+                btnSafeActionPerformed(evt);
+            }
+        });
+
+        btnBearbeiten.setText("Bearbeiten");
+        btnBearbeiten.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBearbeitenActionPerformed(evt);
+            }
+        });
+
+        txtID.setEnabled(false);
+
+        txtVorname.setText("jTextField8");
+        txtVorname.setEnabled(false);
+
+        txtNachname.setText("jTextField9");
+        txtNachname.setEnabled(false);
+
+        txtAdresse.setText("jTextField10");
+        txtAdresse.setEnabled(false);
+
+        txtBDay.setText("jTextField11");
+        txtBDay.setEnabled(false);
+
+        btnClear.setText("Clear");
+        btnClear.setEnabled(false);
+        btnClear.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnClearActionPerformed(evt);
             }
         });
 
@@ -81,74 +97,109 @@ public class ansichtMitarbeiter extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(lblStandort, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(lblbday, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(lblSichtMIt, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(lblVname, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(18, 18, 18)
+                            .addComponent(lblbday, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lblID, javax.swing.GroupLayout.DEFAULT_SIZE, 211, Short.MAX_VALUE)
-                            .addComponent(lblVnameShow, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(lblNnameShow, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(lblAdresseShow, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(lblBdayShow, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(lblStandortAnzeige, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                            .addComponent(txtBDay)
+                            .addComponent(txtNachname)
+                            .addComponent(txtAdresse)
+                            .addComponent(txtVorname)
+                            .addComponent(txtID)))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(btnClose)
-                        .addGap(0, 0, Short.MAX_VALUE))))
+                        .addComponent(btnSafe)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnBearbeiten)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnClear)
+                        .addGap(0, 136, Short.MAX_VALUE)))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblSichtMIt)
-                    .addComponent(lblID))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                    .addComponent(txtID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblVname)
-                    .addComponent(lblVnameShow))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addComponent(txtVorname, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(6, 6, 6)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
-                    .addComponent(lblNnameShow))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addComponent(txtNachname, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(6, 6, 6)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
-                    .addComponent(lblAdresseShow))
+                    .addComponent(txtAdresse, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblbday)
-                    .addComponent(lblBdayShow))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblStandort)
-                    .addComponent(lblStandortAnzeige))
+                    .addComponent(txtBDay, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(btnClose)
-                .addContainerGap(18, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnSafe)
+                    .addComponent(btnBearbeiten)
+                    .addComponent(btnClear))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnCloseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCloseActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnCloseActionPerformed
+    private void btnSafeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSafeActionPerformed
+        // <editor-fold defaultstate="collapsed" desc="Txt und Butten Sichtbarkeit">   
+        btnSafe.setEnabled(false);
+        btnClear.setEnabled(false);
+        btnBearbeiten.setEnabled(true);
+        txtAdresse.setEnabled(false);
+        txtBDay.setEnabled(false);
+        txtID.setEnabled(false);
+        txtNachname.setEnabled(false);
+        txtVorname.setEnabled(false);
+        // </editor-fold>  
+
+    }//GEN-LAST:event_btnSafeActionPerformed
+
+    private void btnBearbeitenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBearbeitenActionPerformed
+        // <editor-fold defaultstate="collapsed" desc="Txt und Butten Sichtbarkeit">   
+        btnSafe.setEnabled(true);
+        btnClear.setEnabled(true);
+        btnBearbeiten.setEnabled(false);
+        txtAdresse.setEnabled(true);
+        txtBDay.setEnabled(true);
+        txtNachname.setEnabled(true);
+        txtVorname.setEnabled(true);
+        // </editor-fold>  
+
+    }//GEN-LAST:event_btnBearbeitenActionPerformed
+
+    private void btnClearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClearActionPerformed
+        txtAdresse.setText("");
+        txtBDay.setText("");
+        txtNachname.setText("");
+        txtNachname.setText("");
+        txtVorname.setText("");
+
+    }//GEN-LAST:event_btnClearActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnClose;
+    private javax.swing.JButton btnBearbeiten;
+    private javax.swing.JButton btnClear;
+    private javax.swing.JButton btnSafe;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel lblAdresseShow;
-    private javax.swing.JLabel lblBdayShow;
-    private javax.swing.JLabel lblID;
-    private javax.swing.JLabel lblNnameShow;
     private javax.swing.JLabel lblSichtMIt;
-    private javax.swing.JLabel lblStandort;
-    private javax.swing.JLabel lblStandortAnzeige;
     private javax.swing.JLabel lblVname;
-    private javax.swing.JLabel lblVnameShow;
     private javax.swing.JLabel lblbday;
+    private javax.swing.JTextField txtAdresse;
+    private javax.swing.JTextField txtBDay;
+    private javax.swing.JTextField txtID;
+    private javax.swing.JTextField txtNachname;
+    private javax.swing.JTextField txtVorname;
     // End of variables declaration//GEN-END:variables
 }

@@ -23,6 +23,7 @@ public class Hauptmenue extends javax.swing.JPanel {
 
         //Group the radio buttons.
         ButtonGroup auswahl;
+
         auswahl = new ButtonGroup();
         auswahl.add(jbtnGeraete);
         auswahl.add(jbtnMitarbeiter);
@@ -35,6 +36,7 @@ public class Hauptmenue extends javax.swing.JPanel {
             btnmore.setEnabled(false);
 
         }
+
     }
     /**
      *
@@ -114,6 +116,11 @@ public class Hauptmenue extends javax.swing.JPanel {
 
         btnConf.setText("Confi");
         btnConf.setEnabled(false);
+        btnConf.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnConfActionPerformed(evt);
+            }
+        });
 
         btnWartungen.setText("Wartung");
         btnWartungen.setEnabled(false);
@@ -127,7 +134,7 @@ public class Hauptmenue extends javax.swing.JPanel {
         MenuePanel.setLayout(MenuePanelLayout);
         MenuePanelLayout.setHorizontalGroup(
             MenuePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGap(0, 279, Short.MAX_VALUE)
         );
         MenuePanelLayout.setVerticalGroup(
             MenuePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -144,27 +151,24 @@ public class Hauptmenue extends javax.swing.JPanel {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jbtnGeraete)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jbtnMitarbeiter)
-                                .addGap(14, 14, 14)
-                                .addComponent(btnHinzu)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(btnloeschen))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(btnConf)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(btnWartungen)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(btnmore)))
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(MenuePanel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jbtnGeraete)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jbtnMitarbeiter)
+                        .addGap(14, 14, 14)
+                        .addComponent(btnHinzu)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnloeschen))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(btnConf)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(btnWartungen)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(btnmore))
+                    .addComponent(MenuePanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane1)
-                    .addComponent(txtSuche, javax.swing.GroupLayout.DEFAULT_SIZE, 245, Short.MAX_VALUE)))
+                    .addComponent(txtSuche, javax.swing.GroupLayout.DEFAULT_SIZE, 303, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -180,7 +184,7 @@ public class Hauptmenue extends javax.swing.JPanel {
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 363, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(MenuePanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGap(18, 18, 18)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(btnConf)
                             .addComponent(btnWartungen)
@@ -191,14 +195,17 @@ public class Hauptmenue extends javax.swing.JPanel {
     private void btnHinzuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHinzuActionPerformed
 
         if (jbtnGeraete.isSelected()) {
+
             JFrame jf = new JFrame("Hinzufügen eines Gerätes");
             jf.setSize(400, 250);
             jf.add(new hinzuGeraet());
             jf.setVisible(true);
+
         } else {
             JFrame jf = new JFrame("Mitarbeiter Erstellung ");
             jf.setSize(400, 250);
             jf.add(new hinzuMitarbeiter());
+
             jf.setVisible(true);
         }
     }//GEN-LAST:event_btnHinzuActionPerformed
@@ -235,10 +242,18 @@ public class Hauptmenue extends javax.swing.JPanel {
         // TODO add your handling code here:
         JFrame jf = new JFrame("Wartungs Menü");
         jf.setSize(600, 600);
-        jf.add(new ansichtWartung());
+        jf.add(new WartungMenue());
         jf.setVisible(true);
 
     }//GEN-LAST:event_btnWartungenActionPerformed
+
+    private void btnConfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConfActionPerformed
+        JFrame jf = new JFrame("Wartungs Menü");
+        jf.setSize(600, 600);
+        jf.add(new ansichtConfi());
+        jf.setVisible(true);
+
+    }//GEN-LAST:event_btnConfActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

@@ -19,68 +19,71 @@
           <Group type="102" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
                       <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                          <Component id="lblStandort" max="32767" attributes="0"/>
-                          <Component id="lblbday" max="32767" attributes="0"/>
+                          <Component id="jLabel2" alignment="0" max="32767" attributes="0"/>
                           <Component id="lblSichtMIt" alignment="0" max="32767" attributes="0"/>
                           <Component id="lblVname" alignment="0" max="32767" attributes="0"/>
                           <Component id="jLabel1" alignment="0" max="32767" attributes="0"/>
-                          <Component id="jLabel2" alignment="0" max="32767" attributes="0"/>
+                          <Component id="lblbday" max="32767" attributes="0"/>
                       </Group>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="lblID" pref="211" max="32767" attributes="0"/>
-                          <Component id="lblVnameShow" max="32767" attributes="0"/>
-                          <Component id="lblNnameShow" alignment="0" max="32767" attributes="0"/>
-                          <Component id="lblAdresseShow" alignment="0" max="32767" attributes="0"/>
-                          <Component id="lblBdayShow" alignment="0" max="32767" attributes="0"/>
-                          <Component id="lblStandortAnzeige" alignment="0" max="32767" attributes="0"/>
+                          <Component id="txtBDay" alignment="0" max="32767" attributes="0"/>
+                          <Component id="txtNachname" alignment="0" max="32767" attributes="0"/>
+                          <Component id="txtAdresse" alignment="0" max="32767" attributes="0"/>
+                          <Component id="txtVorname" max="32767" attributes="0"/>
+                          <Component id="txtID" alignment="0" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
-                      <Component id="btnClose" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                      <Component id="btnSafe" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="btnBearbeiten" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="btnClear" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="0" pref="136" max="32767" attributes="0"/>
                   </Group>
               </Group>
+              <EmptySpace max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
+              <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="lblSichtMIt" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="lblID" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtID" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="lblVname" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="lblVnameShow" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtVorname" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="lblNnameShow" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtNachname" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="lblAdresseShow" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtAdresse" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="lblbday" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="lblBdayShow" alignment="3" min="-2" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="lblStandort" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="lblStandortAnzeige" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtBDay" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Component id="btnClose" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="18" max="32767" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="btnSafe" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="btnBearbeiten" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="btnClear" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -88,7 +91,7 @@
   <SubComponents>
     <Component class="javax.swing.JLabel" name="lblSichtMIt">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Mitarbeiter &#xdc;besicht "/>
+        <Property name="text" type="java.lang.String" value="Mitarbeiter ID "/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="lblVname">
@@ -106,52 +109,64 @@
         <Property name="text" type="java.lang.String" value="Adresse"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="lblID">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="jLabel3"/>
-      </Properties>
-    </Component>
     <Component class="javax.swing.JLabel" name="lblbday">
       <Properties>
         <Property name="text" type="java.lang.String" value="Geburstag"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="lblVnameShow">
+    <Component class="javax.swing.JButton" name="btnSafe">
       <Properties>
-        <Property name="text" type="java.lang.String" value="jLabel3"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JLabel" name="lblNnameShow">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="jLabel4"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JLabel" name="lblAdresseShow">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="jLabel5"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JLabel" name="lblBdayShow">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="jLabel6"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JLabel" name="lblStandort">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Standort"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JLabel" name="lblStandortAnzeige">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="jLabel3"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JButton" name="btnClose">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Schlie&#xdf;en"/>
+        <Property name="text" type="java.lang.String" value="Speichern"/>
+        <Property name="enabled" type="boolean" value="false"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCloseActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSafeActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="btnBearbeiten">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Bearbeiten"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnBearbeitenActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JTextField" name="txtID">
+      <Properties>
+        <Property name="enabled" type="boolean" value="false"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="txtVorname">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="jTextField8"/>
+        <Property name="enabled" type="boolean" value="false"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="txtNachname">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="jTextField9"/>
+        <Property name="enabled" type="boolean" value="false"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="txtAdresse">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="jTextField10"/>
+        <Property name="enabled" type="boolean" value="false"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="txtBDay">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="jTextField11"/>
+        <Property name="enabled" type="boolean" value="false"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="btnClear">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Clear"/>
+        <Property name="enabled" type="boolean" value="false"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnClearActionPerformed"/>
       </Events>
     </Component>
   </SubComponents>

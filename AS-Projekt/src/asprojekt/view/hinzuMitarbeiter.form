@@ -25,11 +25,10 @@
                       <Component id="btnClose" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="btnClear" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="147" max="32767" attributes="0"/>
+                      <EmptySpace min="0" pref="137" max="32767" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                          <Component id="jLabel2" alignment="0" max="32767" attributes="0"/>
                           <Component id="jLabel1" alignment="0" max="32767" attributes="0"/>
                           <Component id="jLabel5" alignment="0" max="32767" attributes="0"/>
                           <Component id="lblVorname" alignment="0" max="32767" attributes="0"/>
@@ -44,7 +43,6 @@
                           <Component id="txtNachname" alignment="0" max="32767" attributes="0"/>
                           <Component id="txtAdresse" alignment="0" max="32767" attributes="0"/>
                           <Component id="txtBDay" alignment="0" max="32767" attributes="0"/>
-                          <Component id="txtStandort" alignment="0" max="32767" attributes="0"/>
                       </Group>
                   </Group>
               </Group>
@@ -80,11 +78,6 @@
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="lblBDay" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="txtBDay" alignment="3" min="-2" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="txtStandort" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
@@ -176,16 +169,6 @@
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCloseActionPerformed"/>
       </Events>
-    </Component>
-    <Component class="javax.swing.JLabel" name="jLabel2">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Standort"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JTextField" name="txtStandort">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="jTextField1"/>
-      </Properties>
     </Component>
   </SubComponents>
 </Form>

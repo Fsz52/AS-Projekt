@@ -41,8 +41,6 @@ public class hinzuMitarbeiter extends javax.swing.JPanel {
         btnSpeichern = new javax.swing.JButton();
         btnClear = new javax.swing.JButton();
         btnClose = new javax.swing.JButton();
-        jLabel2 = new javax.swing.JLabel();
-        txtStandort = new javax.swing.JTextField();
 
         jLabel1.setText("Neuer Mitarbeiter ");
 
@@ -87,10 +85,6 @@ public class hinzuMitarbeiter extends javax.swing.JPanel {
             }
         });
 
-        jLabel2.setText("Standort");
-
-        txtStandort.setText("jTextField1");
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -104,10 +98,9 @@ public class hinzuMitarbeiter extends javax.swing.JPanel {
                         .addComponent(btnClose)
                         .addGap(18, 18, 18)
                         .addComponent(btnClear)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 147, Short.MAX_VALUE))
+                        .addContainerGap(147, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(lblVorname, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -120,9 +113,8 @@ public class hinzuMitarbeiter extends javax.swing.JPanel {
                             .addComponent(txtVorname)
                             .addComponent(txtNachname)
                             .addComponent(txtAdresse)
-                            .addComponent(txtBDay)
-                            .addComponent(txtStandort))))
-                .addContainerGap())
+                            .addComponent(txtBDay))
+                        .addContainerGap())))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -148,10 +140,6 @@ public class hinzuMitarbeiter extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblBDay)
                     .addComponent(txtBDay, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(txtStandort, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnSpeichern)
@@ -167,6 +155,8 @@ public class hinzuMitarbeiter extends javax.swing.JPanel {
 
     private void btnCloseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCloseActionPerformed
         // TODO add your handling code here:
+        
+
     }//GEN-LAST:event_btnCloseActionPerformed
 
     private void btnClearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClearActionPerformed
@@ -184,7 +174,6 @@ public class hinzuMitarbeiter extends javax.swing.JPanel {
     private javax.swing.JButton btnClose;
     private javax.swing.JButton btnSpeichern;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel lblAdresse;
     private javax.swing.JLabel lblBDay;
@@ -194,7 +183,6 @@ public class hinzuMitarbeiter extends javax.swing.JPanel {
     private javax.swing.JTextField txtBDay;
     private javax.swing.JTextField txtID;
     private javax.swing.JTextField txtNachname;
-    private javax.swing.JTextField txtStandort;
     private javax.swing.JTextField txtVorname;
     // End of variables declaration//GEN-END:variables
 }

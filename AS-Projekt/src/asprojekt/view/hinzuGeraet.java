@@ -5,6 +5,10 @@
  */
 package asprojekt.view;
 
+import com.sun.java.accessibility.util.AWTEventMonitor;
+import java.awt.event.WindowListener;
+import sun.awt.windows.WLightweightFramePeer;
+
 /**
  *
  * @author Kenny Ahlwarth
@@ -16,6 +20,7 @@ public class hinzuGeraet extends javax.swing.JPanel {
      */
     public hinzuGeraet() {
         initComponents();
+
     }
 
     /**
@@ -39,6 +44,8 @@ public class hinzuGeraet extends javax.swing.JPanel {
         btnSpeichern = new javax.swing.JButton();
         btnAbbruch = new javax.swing.JButton();
         btnClear = new javax.swing.JButton();
+        lblRaumNr = new javax.swing.JLabel();
+        txtRaumNr = new javax.swing.JTextField();
 
         lblNew.setText("Neues Gerät ");
 
@@ -77,6 +84,14 @@ public class hinzuGeraet extends javax.swing.JPanel {
             }
         });
 
+        lblRaumNr.setText("Raum-Nr.");
+
+        txtRaumNr.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtRaumNrActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -85,26 +100,28 @@ public class hinzuGeraet extends javax.swing.JPanel {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(lblPreis, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(lblNew, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(lblGName, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(lblSerienNr, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(lblOrt, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtSnNr)
-                            .addComponent(txtPreis)
-                            .addComponent(txtGName)
-                            .addComponent(txtOrt))
-                        .addContainerGap())
-                    .addGroup(layout.createSequentialGroup()
                         .addComponent(btnSpeichern)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(btnAbbruch)
                         .addGap(26, 26, 26)
                         .addComponent(btnClear)
-                        .addGap(0, 141, Short.MAX_VALUE))))
+                        .addGap(0, 141, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(lblRaumNr, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(lblPreis, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(lblNew, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(lblGName, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(lblSerienNr, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(lblOrt, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txtSnNr)
+                            .addComponent(txtPreis)
+                            .addComponent(txtGName)
+                            .addComponent(txtOrt)
+                            .addComponent(txtRaumNr))
+                        .addContainerGap())))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -126,12 +143,16 @@ public class hinzuGeraet extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblOrt)
                     .addComponent(txtOrt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblRaumNr)
+                    .addComponent(txtRaumNr, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 21, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnSpeichern)
                     .addComponent(btnAbbruch)
                     .addComponent(btnClear))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(26, 26, 26))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -148,11 +169,17 @@ public class hinzuGeraet extends javax.swing.JPanel {
         txtSnNr.setText("");
         txtOrt.setText("");
         txtPreis.setText("");
+        txtRaumNr.setText("");
     }//GEN-LAST:event_btnClearActionPerformed
 
     private void btnAbbruchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAbbruchActionPerformed
         // TODO add your handling code here:
+        setVisible(false);  
     }//GEN-LAST:event_btnAbbruchActionPerformed
+
+    private void txtRaumNrActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtRaumNrActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtRaumNrActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -163,10 +190,13 @@ public class hinzuGeraet extends javax.swing.JPanel {
     private javax.swing.JLabel lblNew;
     private javax.swing.JLabel lblOrt;
     private javax.swing.JLabel lblPreis;
+    private javax.swing.JLabel lblRaumNr;
     private javax.swing.JLabel lblSerienNr;
     private javax.swing.JTextField txtGName;
     private javax.swing.JTextField txtOrt;
     private javax.swing.JTextField txtPreis;
+    private javax.swing.JTextField txtRaumNr;
     private javax.swing.JTextField txtSnNr;
     // End of variables declaration//GEN-END:variables
+
 }
