@@ -20,7 +20,7 @@ import java.util.logging.Logger;
 import javax.swing.JFrame;
 
 public class Main {
-
+ 
     public static void main(String[] args) {
         AbstractDBConnector dbconnector = new AbstractDBConnector();
         dbconnector.getConnection();
@@ -36,12 +36,10 @@ public class Main {
 //                            }
         JFrame jf = new JFrame("Krass Bruder");
 
-        jf.setSize(600, 600);
+        jf.setSize(800, 650);
         jf.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         jf.add(new Hauptmenue());
         jf.setVisible(true);
-
-        
 
     }
 }

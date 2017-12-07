@@ -5,19 +5,21 @@
  */
 package asprojekt.view;
 
+import javax.swing.JFrame;
+
 /**
  *
  * @author Kenny Ahlwarth
  */
 public class ansichtMitarbeiter extends javax.swing.JPanel {
 
-    /**
-     * Creates new form ansichtMItarbeiter
-     */
+  private JFrame jf; 
     public ansichtMitarbeiter() {
         initComponents();
     }
-
+   public void setJf(JFrame jf) {
+        this.jf = jf;
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -160,6 +162,8 @@ public class ansichtMitarbeiter extends javax.swing.JPanel {
         txtNachname.setEnabled(false);
         txtVorname.setEnabled(false);
         // </editor-fold>  
+        
+        jf.dispose();
 
     }//GEN-LAST:event_btnSafeActionPerformed
 

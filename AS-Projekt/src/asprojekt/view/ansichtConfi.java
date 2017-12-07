@@ -6,6 +6,7 @@
 package asprojekt.view;
 
 import asprojekt.model.Geraet;
+import javax.swing.JFrame;
 
 /**
  *
@@ -17,8 +18,14 @@ public class ansichtConfi extends javax.swing.JPanel {
      * Creates new form ansichtConfi
      */
     private Geraet g;
+    private JFrame jf;
+
     public ansichtConfi() {
         initComponents();
+    }
+
+    public void setJf(JFrame jf) {
+        this.jf = jf;
     }
 
     public ansichtConfi(Geraet g) {
@@ -27,7 +34,7 @@ public class ansichtConfi extends javax.swing.JPanel {
         fillConfig();
     }
 
-    public void fillConfig(){
+    public void fillConfig() {
         txtDNS_Name.setText(g.getNetconfig().getDns_name());
         txtDNS.setText(g.getNetconfig().getDns_server());
         txtIP.setText(g.getNetconfig().getIp_adresse());
@@ -35,6 +42,7 @@ public class ansichtConfi extends javax.swing.JPanel {
         txtMaske.setText(g.getNetconfig().getNetzmaske());
         txtRate.setText(String.valueOf(g.getNetconfig().getUebertragungsrate()));
     }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -55,11 +63,12 @@ public class ansichtConfi extends javax.swing.JPanel {
         txtMaske = new javax.swing.JTextField();
         txtIP = new javax.swing.JTextField();
         txtDNS = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        btnSafe = new javax.swing.JButton();
+        btnBearbeiten = new javax.swing.JButton();
         btnClear = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         txtMAC = new javax.swing.JTextField();
+        btnEnd = new javax.swing.JButton();
 
         jLabel1.setText("Confi");
 
@@ -88,17 +97,18 @@ public class ansichtConfi extends javax.swing.JPanel {
         txtDNS.setText("jTextField5");
         txtDNS.setEnabled(false);
 
-        jButton1.setText("Speichern");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btnSafe.setText("Speichern");
+        btnSafe.setEnabled(false);
+        btnSafe.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btnSafeActionPerformed(evt);
             }
         });
 
-        jButton2.setText("Bearbeiten ");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        btnBearbeiten.setText("Bearbeiten ");
+        btnBearbeiten.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                btnBearbeitenActionPerformed(evt);
             }
         });
 
@@ -120,6 +130,13 @@ public class ansichtConfi extends javax.swing.JPanel {
             }
         });
 
+        btnEnd.setText("OK");
+        btnEnd.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEndActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -128,32 +145,32 @@ public class ansichtConfi extends javax.swing.JPanel {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jLabel1)
-                            .addComponent(lblRate, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(lblMac, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(lblNetzmaske, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(lblIP, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(lblDNS, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(jLabel1)
+                                .addComponent(lblRate, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(lblMac, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(lblNetzmaske, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(lblIP, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(lblDNS, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(jLabel2))
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txtMAC)
                             .addComponent(txtDNS_Name)
                             .addComponent(txtRate)
                             .addComponent(txtMaske)
                             .addComponent(txtIP)
-                            .addComponent(txtDNS)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jButton1)
+                            .addComponent(txtDNS))
+                        .addContainerGap())
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(btnEnd)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 97, Short.MAX_VALUE)
+                        .addComponent(btnSafe)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton2)
+                        .addComponent(btnBearbeiten)
                         .addGap(18, 18, 18)
-                        .addComponent(btnClear)
-                        .addGap(0, 134, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel2)
-                        .addGap(85, 85, 85)
-                        .addComponent(txtMAC)))
-                .addContainerGap())
+                        .addComponent(btnClear))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -185,18 +202,26 @@ public class ansichtConfi extends javax.swing.JPanel {
                     .addComponent(jLabel2))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(jButton2)
-                    .addComponent(btnClear))
-                .addGap(0, 86, Short.MAX_VALUE))
+                    .addComponent(btnSafe)
+                    .addComponent(btnBearbeiten)
+                    .addComponent(btnClear)
+                    .addComponent(btnEnd))
+                .addGap(0, 31, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void btnSafeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSafeActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+        txtDNS.setEnabled(false);
+        txtIP.setEnabled(false);
+        txtDNS_Name.setEnabled(false);
+        txtMaske.setEnabled(false);
+        txtRate.setEnabled(false);
+        btnClear.setEnabled(false);
+        btnSafe.setEnabled(false);
+    }//GEN-LAST:event_btnSafeActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void btnBearbeitenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBearbeitenActionPerformed
         // TODO add your handling code here:
         txtDNS.setEnabled(true);
         txtIP.setEnabled(true);
@@ -204,7 +229,8 @@ public class ansichtConfi extends javax.swing.JPanel {
         txtMaske.setEnabled(true);
         txtRate.setEnabled(true);
         btnClear.setEnabled(true);
-    }//GEN-LAST:event_jButton2ActionPerformed
+        btnSafe.setEnabled(true);
+    }//GEN-LAST:event_btnBearbeitenActionPerformed
 
     private void btnClearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClearActionPerformed
 
@@ -219,11 +245,17 @@ public class ansichtConfi extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtMACActionPerformed
 
+    private void btnEndActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEndActionPerformed
+        // TODO add your handling code here:
+        jf.dispose();
+    }//GEN-LAST:event_btnEndActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnBearbeiten;
     private javax.swing.JButton btnClear;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
+    private javax.swing.JButton btnEnd;
+    private javax.swing.JButton btnSafe;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel lblDNS;

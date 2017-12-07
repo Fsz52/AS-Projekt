@@ -5,10 +5,7 @@
  */
 package asprojekt.view;
 
-import com.sun.java.accessibility.util.AWTEventMonitor;
-import java.awt.event.WindowListener;
 import javax.swing.JFrame;
-import sun.awt.windows.WLightweightFramePeer;
 
 /**
  *
@@ -174,6 +171,7 @@ public class hinzuGeraet extends javax.swing.JPanel {
 
     private void btnSpeichernActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSpeichernActionPerformed
         // TODO add your handling code here:
+        jf.dispose();
     }//GEN-LAST:event_btnSpeichernActionPerformed
 
     private void btnClearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClearActionPerformed

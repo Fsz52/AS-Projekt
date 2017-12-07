@@ -5,19 +5,22 @@
  */
 package asprojekt.view;
 
+import javax.swing.JFrame;
+
 /**
  *
  * @author Kenny Ahlwarth
  */
 public class hinzuMitarbeiter extends javax.swing.JPanel {
 
-    /**
-     * Creates new form hinzuWartung
-     */
+    private JFrame jf; 
     public hinzuMitarbeiter() {
         initComponents();
     }
-
+   public void setJf(JFrame jf) {
+        this.jf = jf;
+    }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -150,11 +153,11 @@ public class hinzuMitarbeiter extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnSpeichernActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSpeichernActionPerformed
-        // TODO add your handling code here:
+        jf.dispose();
     }//GEN-LAST:event_btnSpeichernActionPerformed
 
     private void btnCloseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCloseActionPerformed
-        // TODO add your handling code here:
+        jf.dispose();
         
 
     }//GEN-LAST:event_btnCloseActionPerformed
