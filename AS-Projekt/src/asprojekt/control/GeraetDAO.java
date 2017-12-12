@@ -35,9 +35,9 @@ public class GeraetDAO extends AbstractDBConnector {
                 String standort = rs.getString(4);
                 double anschPreis = rs.getDouble(5);
                 boolean isSwitch = false;
-                    if (rs.getInt(6) == 1){
-                        isSwitch = true;
-                    }
+                if (rs.getInt(6) == 1) {
+                    isSwitch = true;
+                }
                 int p_raum_id = rs.getInt(7);
                 String gebaeude = rs.getString(8);
                 String raumBez = rs.getString(9);
@@ -62,8 +62,8 @@ public class GeraetDAO extends AbstractDBConnector {
         closeConnection();
         return geraete;
     }
-    
-    public int addGeraet(Geraet g){
+
+    public int addGeraet(Geraet g) {
         int id = 0;
         Connection c = getConnection();
         try {
@@ -74,17 +74,29 @@ public class GeraetDAO extends AbstractDBConnector {
             ps.setDouble(3, g.getAnschPreis());
             ps.setBoolean(5, g.isIsSwitch());
             ResultSet rs = ps.executeQuery();
-            
+
             PreparedStatement ps2 = c.prepareStatement("SELECT LAST_INSERT_ID()");
             ResultSet rs2 = ps2.executeQuery();
             rs2.next();
             id = rs2.getInt(1);
             return id;
-            
+
         } catch (SQLException ex) {
             Logger.getLogger(GeraetDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
         closeConnection();
         return id;
+    }
+
+    public void delGeraet(Geraet g) {
+        Connection c = getConnection();
+        try {
+            PreparedStatement ps = c.prepareStatement("DELETE FROM T_Geraete WHERE p_gerate_id = ?");
+            ps.setInt(1, g.getP_geraete_id());
+            ResultSet rs = ps.executeQuery();
+        } catch (SQLException ex) {
+            Logger.getLogger(GeraetDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        closeConnection();
     }
 }
