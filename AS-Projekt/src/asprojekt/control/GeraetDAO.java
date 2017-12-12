@@ -63,7 +63,28 @@ public class GeraetDAO extends AbstractDBConnector {
         return geraete;
     }
     
-    public void addGeraet(Geraet g){
-        
+    public int addGeraet(Geraet g){
+        int id = 0;
+        Connection c = getConnection();
+        try {
+            PreparedStatement ps = c.prepareStatement("INSERT INTO T_Geraete (`sn`, `f_raum_nr`, `standort`, `anschaffungspreis`, `isSwitch`) VALUES (?, ?, ?, ?, ?)");
+            ps.setString(1, g.getSn());
+            ps.setInt(2, g.getRaum().getId());
+            ps.setString(3, g.getStandort());
+            ps.setDouble(3, g.getAnschPreis());
+            ps.setBoolean(5, g.isIsSwitch());
+            ResultSet rs = ps.executeQuery();
+            
+            PreparedStatement ps2 = c.prepareStatement("SELECT LAST_INSERT_ID()");
+            ResultSet rs2 = ps2.executeQuery();
+            rs2.next();
+            id = rs2.getInt(1);
+            return id;
+            
+        } catch (SQLException ex) {
+            Logger.getLogger(GeraetDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        closeConnection();
+        return id;
     }
 }
