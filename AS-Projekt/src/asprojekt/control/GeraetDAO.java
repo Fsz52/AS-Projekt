@@ -62,4 +62,8 @@ public class GeraetDAO extends AbstractDBConnector {
         closeConnection();
         return geraete;
     }
+    
+    public void addGeraet(Geraet g){
+        
+    }
 }
