@@ -29,6 +29,11 @@ public class Geraet {
         this.isSwitch = isSwitch;
     }
 
+    public Geraet() {
+    }
+    
+    
+
     public int getP_geraete_id() {
         return p_geraete_id;
     }
