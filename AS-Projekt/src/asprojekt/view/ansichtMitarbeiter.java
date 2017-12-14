@@ -5,6 +5,8 @@
  */
 package asprojekt.view;
 
+import asprojekt.model.Mitarbeiter;
+import java.util.Date;
 import javax.swing.JFrame;
 
 /**
@@ -13,13 +15,33 @@ import javax.swing.JFrame;
  */
 public class ansichtMitarbeiter extends javax.swing.JPanel {
 
-  private JFrame jf; 
+    private JFrame jf;
+
     public ansichtMitarbeiter() {
         initComponents();
     }
-   public void setJf(JFrame jf) {
+
+    public ansichtMitarbeiter(Mitarbeiter m) {
+        initComponents();
+        setInfos(m);
+    }
+
+    public void setJf(JFrame jf) {
         this.jf = jf;
     }
+
+    public void setInfos(Mitarbeiter m) {
+//        try{
+        lblMitarbeitID.setText(String.valueOf(m.getMitarbeiterID()));
+        txtVorname.setText(m.getVorname());
+        txtNachname.setText(m.getNachname());
+        txtAdresse.setText(m.getAddresse());
+        txtBDay.setText(String.valueOf(m.getGeburtstag()));
+//        }catch(Exception e){
+//            System.out.println("Blub");
+//        }
+    }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -162,7 +184,7 @@ public class ansichtMitarbeiter extends javax.swing.JPanel {
         txtNachname.setEnabled(false);
         txtVorname.setEnabled(false);
         // </editor-fold>  
-        
+
         jf.dispose();
 
     }//GEN-LAST:event_btnSafeActionPerformed

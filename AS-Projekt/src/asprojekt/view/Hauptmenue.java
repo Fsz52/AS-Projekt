@@ -14,6 +14,7 @@ import java.util.ArrayList;
 import javax.swing.ButtonGroup;
 import javax.swing.DefaultListModel;
 import javax.swing.JFrame;
+import javax.swing.ListSelectionModel;
 
 /**
  *
@@ -21,12 +22,9 @@ import javax.swing.JFrame;
  */
 public class Hauptmenue extends javax.swing.JPanel {
 
-
-
     public Hauptmenue() {
         initComponents();
         this.fillGeraete();
-        this.fillMitarbeiter();
 
         //Group the radio buttons.
         ButtonGroup auswahl;
@@ -43,6 +41,8 @@ public class Hauptmenue extends javax.swing.JPanel {
             btnmore.setEnabled(false);
 
         }
+        // Liste zu Einfachauswahl 
+        lstUebersicht.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 
     }
 
@@ -198,7 +198,7 @@ public class Hauptmenue extends javax.swing.JPanel {
 
             hinzuGeraet hG = new hinzuGeraet();
             JFrame jf = new JFrame("Hinzufügen eines Gerätes");
-            jf.setSize(400, 250);
+            jf.setSize(800, 250);
             jf.add(hG);
             hG.setJf(jf);
             hG.setHauptmenue(this);
@@ -233,7 +233,7 @@ public class Hauptmenue extends javax.swing.JPanel {
         for (Mitarbeiter mitarb : allMitarbeiter) {
             mitDefaultListModel.addElement(mitarb);
         }
-
+        lstUebersicht.setModel(mitDefaultListModel);
     }
 
 
@@ -241,6 +241,8 @@ public class Hauptmenue extends javax.swing.JPanel {
         btnWartungen.setVisible(true);
         btnConf.setVisible(true);
         btnmore.setVisible(true);
+        lstUebersicht.removeAll();
+        this.fillGeraete();
     }//GEN-LAST:event_jbtnGeraeteActionPerformed
 
     private void lstUebersichtValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_lstUebersichtValueChanged
@@ -257,11 +259,11 @@ public class Hauptmenue extends javax.swing.JPanel {
             plnMenu.revalidate();
         } else {
 
-            // ansichtMitarbeiter anM = new ansichtMitarbeiter((Mitarbeiter) lstUebersicht.getSelectedValue());
-            //plnMenu.add(anM);
-            //anM.setSize(plnMenu.getWidth(), plnMenu.getHeight());
-            //anM.setVisible(true);
-            //anM.revalidate();
+            ansichtMitarbeiter anM = new ansichtMitarbeiter((Mitarbeiter) lstUebersicht.getSelectedValue());
+            plnMenu.add(anM);
+            anM.setSize(plnMenu.getWidth(), plnMenu.getHeight());
+            anM.setVisible(true);
+            anM.revalidate();
         }
     }//GEN-LAST:event_lstUebersichtValueChanged
 
@@ -269,6 +271,8 @@ public class Hauptmenue extends javax.swing.JPanel {
         btnWartungen.setVisible(false);
         btnConf.setVisible(false);
         btnmore.setVisible(false);
+        lstUebersicht.removeAll();
+        this.fillMitarbeiter();
     }//GEN-LAST:event_jbtnMitarbeiterActionPerformed
 
     private void txtSucheMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtSucheMouseClicked
@@ -297,7 +301,7 @@ public class Hauptmenue extends javax.swing.JPanel {
         jf.setVisible(true);
 
     }//GEN-LAST:event_btnConfActionPerformed
-    
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnConf;
