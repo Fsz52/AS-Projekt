@@ -249,6 +249,7 @@ public class Hauptmenue extends javax.swing.JPanel {
 
         btnmore.setVisible(true);
         lstUebersicht.removeAll();
+        geraetListModel.removeAllElements();
         this.fillGeraete();
     }//GEN-LAST:event_jbtnGeraeteActionPerformed
 
@@ -279,6 +280,7 @@ public class Hauptmenue extends javax.swing.JPanel {
 
         btnmore.setVisible(false);
         lstUebersicht.removeAll();
+        mitDefaultListModel.removeAllElements();
         this.fillMitarbeiter();
     }//GEN-LAST:event_jbtnMitarbeiterActionPerformed
 
