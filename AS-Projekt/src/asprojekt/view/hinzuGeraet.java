@@ -5,8 +5,11 @@
  */
 package asprojekt.view;
 
+import asprojekt.control.GeraetDAO;
+import asprojekt.control.NetKonfigDAO;
 import asprojekt.control.RaumDAO;
 import asprojekt.model.Geraet;
+import asprojekt.model.NetKonfig;
 import asprojekt.model.Raum;
 import java.util.ArrayList;
 import javax.swing.DefaultComboBoxModel;
@@ -278,20 +281,37 @@ public class hinzuGeraet extends javax.swing.JPanel {
     private void btnSpeichernActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSpeichernActionPerformed
         // TODO add your handling code here:
         Geraet g = new Geraet();
+        NetKonfig netKon = new NetKonfig();
         int portAnzahl;
-        
+        GeraetDAO gDAO = new GeraetDAO();
+        NetKonfigDAO netDAO = new NetKonfigDAO();
+
         g.setAnschPreis((Double.parseDouble(txtPreis.getText())));
         g.setNetconfig(null);
-        g.setRaum((Raum)cmb_raum.getSelectedItem());
+        g.setRaum((Raum) cmb_raum.getSelectedItem());
         g.setSn(txtSnNr.getText());
         g.setStandort(txtOrt.getText());
-        if(cb_switch.isSelected()){
+        
+        int g_id = gDAO.addGeraet(g);
+        g.setP_geraete_id(g_id);
+        netKon.setF_geraeteID(g_id);
+        netKon.setDns_name(txt_dns_name.getText());
+        netKon.setDns_server(txt_dns_ip.getText());
+        netKon.setIp_adresse(txt_ip.getText());
+        netKon.setMac(txt_mac.getText());
+        netKon.setNetzmaske(txt_netzmaske.getText());
+        netKon.setUebertragungsrate(Integer.parseInt(txt_uebertragung.getText()));
+        
+        netDAO.addNetKonfig(g, netKon);
+        
+        if (cb_switch.isSelected()) {
             g.setIsSwitch(true);
             portAnzahl = Integer.parseInt(txt_ports.getText());
             //Code für Übergabe an Netzkonfig-GUI
-        }else{
+        } else {
             g.setIsSwitch(false);
         }
+        hauptmenue.refreshGeraeteListe();
         jf.dispose();
     }//GEN-LAST:event_btnSpeichernActionPerformed
 

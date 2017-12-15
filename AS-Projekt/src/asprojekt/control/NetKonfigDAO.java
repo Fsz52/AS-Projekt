@@ -41,7 +41,7 @@ public class NetKonfigDAO extends AbstractDBConnector {
             ps.setDouble(4, uebertragungsrate);
             ps.setString(5, netzmaske);
             ps.setString(6, ip);
-            ps.setString(6, dns_server);
+            ps.setString(7, dns_server);
             ResultSet rs = ps.executeQuery();
         } catch (SQLException ex) {
             Logger.getLogger(NetKonfigDAO.class.getName()).log(Level.SEVERE, null, ex);

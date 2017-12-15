@@ -71,7 +71,7 @@ public class GeraetDAO extends AbstractDBConnector {
             ps.setString(1, g.getSn());
             ps.setInt(2, g.getRaum().getId());
             ps.setString(3, g.getStandort());
-            ps.setDouble(3, g.getAnschPreis());
+            ps.setDouble(4, g.getAnschPreis());
             ps.setBoolean(5, g.isIsSwitch());
             ResultSet rs = ps.executeQuery();
 

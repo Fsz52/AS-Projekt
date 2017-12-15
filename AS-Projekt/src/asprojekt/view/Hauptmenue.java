@@ -246,6 +246,18 @@ public class Hauptmenue extends javax.swing.JPanel {
         lstUebersicht.setModel(mitDefaultListModel);
     }
 
+    public void refreshGeraeteListe() {
+        lstUebersicht.removeAll();
+        mitDefaultListModel.removeAllElements();
+        fillGeraete();
+    }
+
+    public void refreshMitarbeiterListe() {
+        lstUebersicht.removeAll();
+        mitDefaultListModel.removeAllElements();
+        fillMitarbeiter();
+    }
+
 
     private void jbtnGeraeteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnGeraeteActionPerformed
         btnWartungen.setVisible(true);
@@ -322,6 +334,7 @@ public class Hauptmenue extends javax.swing.JPanel {
     }//GEN-LAST:event_btnmoreActionPerformed
 
     private void txtSucheKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtSucheKeyReleased
+        anG.setVisible(false);
         if (jbtnGeraete.isSelected()) {
             if (t != null && t.isRunning()) {
                 t.stop();
@@ -338,7 +351,6 @@ public class Hauptmenue extends javax.swing.JPanel {
                         }
 
                     }
-
                     lstUebersicht.setModel(dfm);
                 }
             });

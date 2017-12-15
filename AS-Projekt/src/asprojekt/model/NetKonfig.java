@@ -29,6 +29,11 @@ public class NetKonfig {
         this.dns_server = dns_server;
     }
 
+    public NetKonfig() {
+    }
+    
+    
+
     public int getF_geraeteID() {
         return f_geraeteID;
     }
