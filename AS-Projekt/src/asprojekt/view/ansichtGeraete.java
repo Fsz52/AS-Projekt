@@ -31,6 +31,13 @@ public class ansichtGeraete extends javax.swing.JPanel {
         lblshowPreis.setText(String.valueOf(g.getAnschPreis()));
         lblshowOrt.setText(g.getStandort());
         lblShowRaum.setText(g.getRaum().getRaumNr());
+        txtDNSNa.setText(g.getNetconfig().getDns_name());
+        txtDNS.setText(g.getNetconfig().getDns_server());
+        txtIP.setText(g.getNetconfig().getIp_adresse());
+        txtMaske.setText(g.getNetconfig().getNetzmaske());
+        txtRate.setText(String.valueOf(g.getNetconfig().getUebertragungsrate()));
+        lblMacAn.setText(g.getNetconfig().getMac());
+        
     }
 
     /**
@@ -89,7 +96,8 @@ public class ansichtGeraete extends javax.swing.JPanel {
 
         lblShowRaum.setText("jLabel2");
 
-        lblConfi.setText("jLabel2");
+        lblConfi.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        lblConfi.setText("Netzkonfiguration");
 
         lblDNSname.setText("DNS-Name");
 
@@ -158,7 +166,7 @@ public class ansichtGeraete extends javax.swing.JPanel {
                             .addComponent(lblMaske, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(lblConfi, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(lblDNSname, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(lblRate, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 89, Short.MAX_VALUE))
+                            .addComponent(lblRate, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(txtMaske)
@@ -246,7 +254,7 @@ public class ansichtGeraete extends javax.swing.JPanel {
                     .addComponent(btnSafe)
                     .addComponent(btnEdit)
                     .addComponent(btnClear))
-                .addContainerGap(98, Short.MAX_VALUE))
+                .addContainerGap(92, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 

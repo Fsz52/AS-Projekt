@@ -27,7 +27,7 @@
                           <Component id="lblMaske" alignment="0" max="32767" attributes="0"/>
                           <Component id="lblConfi" alignment="0" max="32767" attributes="0"/>
                           <Component id="lblDNSname" alignment="0" max="32767" attributes="0"/>
-                          <Component id="lblRate" alignment="0" pref="89" max="32767" attributes="0"/>
+                          <Component id="lblRate" alignment="0" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
@@ -138,7 +138,7 @@
                   <Component id="btnEdit" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="btnClear" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="98" max="32767" attributes="0"/>
+              <EmptySpace pref="92" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -196,7 +196,10 @@
     </Component>
     <Component class="javax.swing.JLabel" name="lblConfi">
       <Properties>
-        <Property name="text" type="java.lang.String" value="jLabel2"/>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Tahoma" size="18" style="0"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Netzkonfiguration"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="lblDNSname">

@@ -181,7 +181,7 @@ public class ansichtMitarbeiter extends javax.swing.JPanel {
         txtVorname.setEnabled(false);
         // </editor-fold>  
 
-        jf.dispose();
+        
 
     }//GEN-LAST:event_btnSafeActionPerformed
 
