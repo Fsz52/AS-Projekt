@@ -16,35 +16,57 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="0" attributes="0">
+          <Group type="102" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" attributes="0">
-                      <Component id="lblRaumNr" min="-2" pref="89" max="-2" attributes="0"/>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="lblShowRaum" max="32767" attributes="0"/>
+                  <Group type="102" alignment="0" attributes="0">
+                      <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                          <Component id="lblMAC" alignment="0" max="32767" attributes="0"/>
+                          <Component id="lblDNS" alignment="0" max="32767" attributes="0"/>
+                          <Component id="lblIP" alignment="0" max="32767" attributes="0"/>
+                          <Component id="lblMaske" alignment="0" max="32767" attributes="0"/>
+                          <Component id="lblConfi" alignment="0" max="32767" attributes="0"/>
+                          <Component id="lblDNSname" alignment="0" max="32767" attributes="0"/>
+                          <Component id="lblRate" alignment="0" pref="89" max="32767" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="txtMaske" alignment="0" max="32767" attributes="0"/>
+                          <Component id="txtRate" alignment="0" max="32767" attributes="0"/>
+                          <Component id="txtDNSNa" max="32767" attributes="0"/>
+                          <Component id="txtIP" alignment="0" max="32767" attributes="0"/>
+                          <Component id="txtDNS" max="32767" attributes="0"/>
+                          <Component id="lblMacAn" alignment="0" max="32767" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <Group type="102" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="0" attributes="0">
-                              <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                  <Component id="lblSnNr" max="32767" attributes="0"/>
-                                  <Component id="jLabel1" alignment="1" max="32767" attributes="0"/>
-                                  <Component id="lblOrt" max="32767" attributes="0"/>
-                              </Group>
-                              <EmptySpace type="unrelated" max="32767" attributes="0"/>
-                          </Group>
-                          <Group type="102" attributes="0">
+                          <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
+                              <Component id="lblSnNr" max="32767" attributes="0"/>
+                              <Component id="jLabel1" alignment="1" max="32767" attributes="0"/>
+                              <Component id="lblOrt" max="32767" attributes="0"/>
                               <Component id="lblueberGaert" max="32767" attributes="0"/>
-                              <EmptySpace min="-2" pref="5" max="-2" attributes="0"/>
                           </Group>
+                          <Component id="lblRaumNr" alignment="0" min="-2" pref="89" max="-2" attributes="0"/>
                       </Group>
+                      <EmptySpace min="-2" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="lblshowNameG" pref="240" max="32767" attributes="0"/>
-                          <Component id="lblShSnNR" max="32767" attributes="0"/>
-                          <Component id="lblshowPreis" max="32767" attributes="0"/>
+                          <Component id="lblShowRaum" alignment="0" max="32767" attributes="0"/>
                           <Component id="lblshowOrt" alignment="0" max="32767" attributes="0"/>
+                          <Component id="lblshowPreis" max="32767" attributes="0"/>
+                          <Component id="lblShSnNR" max="32767" attributes="0"/>
+                          <Component id="lblshowNameG" alignment="0" max="32767" attributes="0"/>
                       </Group>
+                      <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <Component id="btnSafe" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Component id="btnEdit" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Component id="btnClear" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="0" pref="252" max="32767" attributes="0"/>
                   </Group>
               </Group>
           </Group>
@@ -56,7 +78,7 @@
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="lblueberGaert" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="lblshowNameG" alignment="3" max="32767" attributes="0"/>
+                  <Component id="lblshowNameG" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="unrelated" min="-2" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
@@ -78,7 +100,45 @@
                   <Component id="lblRaumNr" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="lblShowRaum" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" max="-2" attributes="0"/>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Component id="lblConfi" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="lblDNSname" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtDNSNa" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="lblRate" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtRate" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="lblMaske" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtMaske" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="lblIP" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtIP" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="lblDNS" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtDNS" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="lblMAC" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="lblMacAn" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="btnSafe" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="btnEdit" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="btnClear" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace pref="98" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -133,6 +193,102 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="jLabel2"/>
       </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblConfi">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="jLabel2"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblDNSname">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="DNS-Name"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblRate">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="&#xdc;bertagungsrate"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="txtDNSNa">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="jTextField1"/>
+        <Property name="enabled" type="boolean" value="false"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblMaske">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Netzmaske"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblIP">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="IP-Adresse"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblDNS">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="DNS"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblMAC">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="MAC"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="txtRate">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="jTextField2"/>
+        <Property name="enabled" type="boolean" value="false"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="txtMaske">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="jTextField3"/>
+        <Property name="enabled" type="boolean" value="false"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="txtIP">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="jTextField4"/>
+        <Property name="enabled" type="boolean" value="false"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="txtDNS">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="jTextField5"/>
+        <Property name="enabled" type="boolean" value="false"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblMacAn">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="jLabel2"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="btnSafe">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Speichern"/>
+        <Property name="enabled" type="boolean" value="false"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSafeActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="btnEdit">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Bearbeiten"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnEditActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="btnClear">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Clear "/>
+        <Property name="enabled" type="boolean" value="false"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnClearActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>
