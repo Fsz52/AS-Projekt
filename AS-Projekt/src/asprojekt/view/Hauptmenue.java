@@ -10,17 +10,24 @@ import asprojekt.control.MitarbeiterDAO;
 import asprojekt.model.Geraet;
 import asprojekt.model.Mitarbeiter;
 import java.awt.Color;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import javax.swing.ButtonGroup;
 import javax.swing.DefaultListModel;
 import javax.swing.JFrame;
 import javax.swing.ListSelectionModel;
+import javax.swing.Timer;
 
 /**
  *
  * @author Kenny Ahlwarth
  */
 public class Hauptmenue extends javax.swing.JPanel {
+
+    private Timer t;
+    DefaultListModel<Geraet> geraetListModel = new DefaultListModel<>();
+    DefaultListModel<Mitarbeiter> mitDefaultListModel = new DefaultListModel<>();
 
     public Hauptmenue() {
         initComponents();
@@ -82,6 +89,11 @@ public class Hauptmenue extends javax.swing.JPanel {
         txtSuche.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 txtSucheMouseClicked(evt);
+            }
+        });
+        txtSuche.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtSucheKeyReleased(evt);
             }
         });
 
@@ -215,7 +227,7 @@ public class Hauptmenue extends javax.swing.JPanel {
 
     // Methoden Zum Füllen der Listen
     public void fillGeraete() {
-        DefaultListModel<Geraet> geraetListModel = new DefaultListModel<>();
+
         GeraetDAO gDAO = new GeraetDAO();
         ArrayList<Geraet> alleGeraete = gDAO.readAll();
         for (Geraet geraet : alleGeraete) {
@@ -227,7 +239,7 @@ public class Hauptmenue extends javax.swing.JPanel {
     }
 
     public void fillMitarbeiter() {
-        DefaultListModel<Mitarbeiter> mitDefaultListModel = new DefaultListModel<>();
+
         MitarbeiterDAO mDAo = new MitarbeiterDAO();
         ArrayList<Mitarbeiter> allMitarbeiter = mDAo.readAll();
         for (Mitarbeiter mitarb : allMitarbeiter) {
@@ -301,6 +313,56 @@ public class Hauptmenue extends javax.swing.JPanel {
         jf.setVisible(true);
 
     }//GEN-LAST:event_btnConfActionPerformed
+
+    private void txtSucheKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtSucheKeyReleased
+        if (jbtnGeraete.isSelected()) {
+            if (t != null && t.isRunning()) {
+                t.stop();
+            }
+            Timer t = new Timer(500, new ActionListener() {
+                @Override
+                public void actionPerformed(ActionEvent e) {
+                    DefaultListModel dfm = new DefaultListModel<>();
+                    for (int i = 0; i < geraetListModel.getSize(); i++) {
+                        Geraet g = geraetListModel.getElementAt(i);
+
+                        if (g.getNetconfig().getDns_name().indexOf(txtSuche.getText()) != -1) {
+                            dfm.addElement(g);
+                        }
+
+                    }
+
+                    lstUebersicht.setModel(dfm);
+                }
+            });
+            t.setRepeats(false);
+            t.start();
+        }
+
+        if (jbtnMitarbeiter.isSelected()) {
+            if (t != null && t.isRunning()) {
+                t.stop();
+            }
+            Timer t = new Timer(500, new ActionListener() {
+                @Override
+                public void actionPerformed(ActionEvent e) {
+                    DefaultListModel dfm = new DefaultListModel<>();
+                    for (int i = 0; i < mitDefaultListModel.getSize(); i++) {
+                        Mitarbeiter m = mitDefaultListModel.getElementAt(i);
+                        String vornachname = m.getVorname()+m.getNachname();
+                        if (vornachname.indexOf(txtSuche.getText()) != -1) {
+                            dfm.addElement(m);
+                        }
+
+                    }
+
+                    lstUebersicht.setModel(dfm);
+                }
+            });
+            t.setRepeats(false);
+            t.start();
+        }
+    }//GEN-LAST:event_txtSucheKeyReleased
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
