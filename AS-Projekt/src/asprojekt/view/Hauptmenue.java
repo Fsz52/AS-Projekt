@@ -36,7 +36,7 @@ public class Hauptmenue extends javax.swing.JPanel {
         btnloeschen.setEnabled(false);
         plnMenu.setBackground(Color.red);
         while (jbtnMitarbeiter.isSelected()) {
-            btnConf.setEnabled(false);
+
             btnWartungen.setEnabled(false);
             btnmore.setEnabled(false);
 
@@ -61,7 +61,6 @@ public class Hauptmenue extends javax.swing.JPanel {
         btnloeschen = new javax.swing.JButton();
         jbtnGeraete = new javax.swing.JRadioButton();
         jbtnMitarbeiter = new javax.swing.JRadioButton();
-        btnConf = new javax.swing.JButton();
         btnWartungen = new javax.swing.JButton();
         plnMenu = new javax.swing.JPanel();
         btnmore = new javax.swing.JButton();
@@ -114,14 +113,6 @@ public class Hauptmenue extends javax.swing.JPanel {
             }
         });
 
-        btnConf.setText("Confi");
-        btnConf.setEnabled(false);
-        btnConf.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnConfActionPerformed(evt);
-            }
-        });
-
         btnWartungen.setText("Wartung");
         btnWartungen.setEnabled(false);
         btnWartungen.addActionListener(new java.awt.event.ActionListener() {
@@ -143,13 +134,18 @@ public class Hauptmenue extends javax.swing.JPanel {
 
         btnmore.setText("Infos");
         btnmore.setEnabled(false);
+        btnmore.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnmoreActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jbtnGeraete)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -159,10 +155,9 @@ public class Hauptmenue extends javax.swing.JPanel {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btnloeschen))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(btnConf)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addContainerGap()
                         .addComponent(btnWartungen)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(btnmore))
                     .addComponent(plnMenu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -184,9 +179,8 @@ public class Hauptmenue extends javax.swing.JPanel {
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 363, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(plnMenu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(btnConf)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(btnWartungen)
                             .addComponent(btnmore)))))
         );
@@ -205,10 +199,11 @@ public class Hauptmenue extends javax.swing.JPanel {
             jf.setVisible(true);
 
         } else {
+            hinzuMitarbeiter hMit = new hinzuMitarbeiter();           
             JFrame jf = new JFrame("Mitarbeiter Erstellung ");
             jf.setSize(400, 250);
-            jf.add(new hinzuMitarbeiter());
-
+            jf.add(hMit);
+            hMit.setJf(jf);
             jf.setVisible(true);
         }
     }//GEN-LAST:event_btnHinzuActionPerformed
@@ -239,7 +234,7 @@ public class Hauptmenue extends javax.swing.JPanel {
 
     private void jbtnGeraeteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnGeraeteActionPerformed
         btnWartungen.setVisible(true);
-        btnConf.setVisible(true);
+
         btnmore.setVisible(true);
         lstUebersicht.removeAll();
         this.fillGeraete();
@@ -248,7 +243,7 @@ public class Hauptmenue extends javax.swing.JPanel {
     private void lstUebersichtValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_lstUebersichtValueChanged
         btnloeschen.setEnabled(true);
         btnWartungen.setEnabled(true);
-        btnConf.setEnabled(true);
+
         btnmore.setEnabled(true);
 
         if (jbtnGeraete.isSelected()) {
@@ -269,7 +264,7 @@ public class Hauptmenue extends javax.swing.JPanel {
 
     private void jbtnMitarbeiterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnMitarbeiterActionPerformed
         btnWartungen.setVisible(false);
-        btnConf.setVisible(false);
+
         btnmore.setVisible(false);
         lstUebersicht.removeAll();
         this.fillMitarbeiter();
@@ -286,25 +281,21 @@ public class Hauptmenue extends javax.swing.JPanel {
 
     private void btnWartungenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnWartungenActionPerformed
         // TODO add your handling code here:
+        WartungMenue Wart = new WartungMenue();
         JFrame jf = new JFrame("Wartungs Menü");
         jf.setSize(600, 600);
-        jf.add(new WartungMenue());
+        jf.add(Wart);
+        Wart.setJf(jf);
         jf.setVisible(true);
 
     }//GEN-LAST:event_btnWartungenActionPerformed
 
-    private void btnConfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConfActionPerformed
-        JFrame jf = new JFrame("Wartungs Menü");
-        ansichtConfi anC = new ansichtConfi((Geraet) lstUebersicht.getSelectedValue());
-        jf.setSize(600, 600);
-        jf.add(anC);
-        jf.setVisible(true);
-
-    }//GEN-LAST:event_btnConfActionPerformed
+    private void btnmoreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnmoreActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnmoreActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnConf;
     private javax.swing.JButton btnHinzu;
     private javax.swing.JButton btnWartungen;
     private javax.swing.JButton btnloeschen;

@@ -12,9 +12,14 @@ public class WartungMenue extends javax.swing.JPanel {
      * Creates new form ansichtWartung
      */
     private JFrame jf;
+    private Hauptmenue hauptmenue;
 
     public WartungMenue() {
         initComponents();
+        
+    }
+     public void setHauptmenue(Hauptmenue hauptmenue) {
+        this.hauptmenue = hauptmenue;
     }
 
     public void setJf(JFrame jf) {
@@ -146,8 +151,7 @@ public class WartungMenue extends javax.swing.JPanel {
 
     private void btnCloseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCloseActionPerformed
 
-        jf.dispose();
-
+        jf.dispose();   
     }//GEN-LAST:event_btnCloseActionPerformed
 
     private void btnADDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnADDActionPerformed

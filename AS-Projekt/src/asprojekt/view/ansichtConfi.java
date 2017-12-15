@@ -13,19 +13,15 @@ import javax.swing.JFrame;
  * @author Kenny Ahlwarth
  */
 public class ansichtConfi extends javax.swing.JPanel {
-
-    /**
-     * Creates new form ansichtConfi
-     */
     private Geraet g;
-    private JFrame jf;
+    private JFrame jfConfig;
 
     public ansichtConfi() {
         initComponents();
     }
 
-    public void setJf(JFrame jf) {
-        this.jf = jf;
+    public void setJf(JFrame jfConfig) {
+        this.jfConfig = jfConfig;
     }
 
     public ansichtConfi(Geraet g) {
@@ -68,7 +64,7 @@ public class ansichtConfi extends javax.swing.JPanel {
         btnClear = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         txtMAC = new javax.swing.JTextField();
-        btnEnd = new javax.swing.JButton();
+        btnClose = new javax.swing.JButton();
 
         jLabel1.setText("Confi");
 
@@ -130,10 +126,10 @@ public class ansichtConfi extends javax.swing.JPanel {
             }
         });
 
-        btnEnd.setText("OK");
-        btnEnd.addActionListener(new java.awt.event.ActionListener() {
+        btnClose.setText("Close");
+        btnClose.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnEndActionPerformed(evt);
+                btnCloseActionPerformed(evt);
             }
         });
 
@@ -144,33 +140,31 @@ public class ansichtConfi extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(jLabel1)
-                                .addComponent(lblRate, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(lblMac, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(lblNetzmaske, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(lblIP, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(lblDNS, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addComponent(jLabel2))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtMAC)
-                            .addComponent(txtDNS_Name)
-                            .addComponent(txtRate)
-                            .addComponent(txtMaske)
-                            .addComponent(txtIP)
-                            .addComponent(txtDNS))
-                        .addContainerGap())
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(btnEnd)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 97, Short.MAX_VALUE)
-                        .addComponent(btnSafe)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnBearbeiten)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnClear))))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(jLabel1)
+                        .addComponent(lblRate, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(lblMac, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(lblNetzmaske, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(lblIP, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(lblDNS, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jLabel2))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(txtMAC)
+                    .addComponent(txtDNS_Name)
+                    .addComponent(txtRate)
+                    .addComponent(txtMaske)
+                    .addComponent(txtIP)
+                    .addComponent(txtDNS))
+                .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addComponent(btnClose)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 95, Short.MAX_VALUE)
+                .addComponent(btnSafe)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnBearbeiten)
+                .addGap(18, 18, 18)
+                .addComponent(btnClear))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -205,7 +199,7 @@ public class ansichtConfi extends javax.swing.JPanel {
                     .addComponent(btnSafe)
                     .addComponent(btnBearbeiten)
                     .addComponent(btnClear)
-                    .addComponent(btnEnd))
+                    .addComponent(btnClose))
                 .addGap(0, 31, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
@@ -245,16 +239,16 @@ public class ansichtConfi extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtMACActionPerformed
 
-    private void btnEndActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEndActionPerformed
+    private void btnCloseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCloseActionPerformed
         // TODO add your handling code here:
-        jf.dispose();
-    }//GEN-LAST:event_btnEndActionPerformed
+        jfConfig.dispose();
+    }//GEN-LAST:event_btnCloseActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBearbeiten;
     private javax.swing.JButton btnClear;
-    private javax.swing.JButton btnEnd;
+    private javax.swing.JButton btnClose;
     private javax.swing.JButton btnSafe;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;

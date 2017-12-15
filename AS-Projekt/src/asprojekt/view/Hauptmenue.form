@@ -23,7 +23,7 @@
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="1" attributes="0">
-              <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="103" groupAlignment="0" max="-2" attributes="0">
                   <Group type="102" attributes="0">
                       <Component id="jbtnGeraete" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
@@ -34,10 +34,9 @@
                       <Component id="btnloeschen" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" attributes="0">
-                      <Component id="btnConf" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
                       <Component id="btnWartungen" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
                       <Component id="btnmore" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <Component id="plnMenu" min="-2" max="-2" attributes="0"/>
@@ -65,11 +64,10 @@
                   <Component id="jScrollPane1" pref="363" max="32767" attributes="0"/>
                   <Group type="102" attributes="0">
                       <Component id="plnMenu" max="32767" attributes="0"/>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="btnConf" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="btnWartungen" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="btnmore" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="btnWartungen" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnmore" alignment="0" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
               </Group>
@@ -147,15 +145,6 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jbtnMitarbeiterActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="btnConf">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Confi"/>
-        <Property name="enabled" type="boolean" value="false"/>
-      </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnConfActionPerformed"/>
-      </Events>
-    </Component>
     <Component class="javax.swing.JButton" name="btnWartungen">
       <Properties>
         <Property name="text" type="java.lang.String" value="Wartung"/>
@@ -185,6 +174,9 @@
         <Property name="text" type="java.lang.String" value="Infos"/>
         <Property name="enabled" type="boolean" value="false"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnmoreActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>
