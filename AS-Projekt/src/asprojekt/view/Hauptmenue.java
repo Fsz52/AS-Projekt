@@ -28,8 +28,11 @@ public class Hauptmenue extends javax.swing.JPanel {
     private Timer t;
     DefaultListModel<Geraet> geraetListModel = new DefaultListModel<>();
     DefaultListModel<Mitarbeiter> mitDefaultListModel = new DefaultListModel<>();
+    private ansichtGeraete anG;
+    private ansichtMitarbeiter anM;
 
     public Hauptmenue() {
+
         initComponents();
         this.fillGeraete();
 
@@ -211,7 +214,7 @@ public class Hauptmenue extends javax.swing.JPanel {
             jf.setVisible(true);
 
         } else {
-            hinzuMitarbeiter hMit = new hinzuMitarbeiter();           
+            hinzuMitarbeiter hMit = new hinzuMitarbeiter();
             JFrame jf = new JFrame("Mitarbeiter Erstellung ");
             jf.setSize(400, 250);
             jf.add(hMit);
@@ -246,7 +249,6 @@ public class Hauptmenue extends javax.swing.JPanel {
 
     private void jbtnGeraeteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnGeraeteActionPerformed
         btnWartungen.setVisible(true);
-
         btnmore.setVisible(true);
         lstUebersicht.removeAll();
         geraetListModel.removeAllElements();
@@ -260,18 +262,29 @@ public class Hauptmenue extends javax.swing.JPanel {
         btnmore.setEnabled(true);
 
         if (jbtnGeraete.isSelected()) {
-            ansichtGeraete anG = new ansichtGeraete((Geraet) lstUebersicht.getSelectedValue());
-            plnMenu.add(anG);
-            anG.setSize(plnMenu.getWidth(), plnMenu.getHeight());
-            anG.setVisible(true);
-            plnMenu.revalidate();
+            plnMenu.removeAll();
+            try {
+                this.anG = new ansichtGeraete((Geraet) lstUebersicht.getSelectedValue());
+                plnMenu.add(anG);
+                anG.setSize(plnMenu.getWidth(), plnMenu.getHeight());
+                anG.setVisible(true);
+                plnMenu.revalidate();
+            } catch (Exception e) {
+
+            }
+
         } else {
 
-            ansichtMitarbeiter anM = new ansichtMitarbeiter((Mitarbeiter) lstUebersicht.getSelectedValue());
-            plnMenu.add(anM);
-            anM.setSize(plnMenu.getWidth(), plnMenu.getHeight());
-            anM.setVisible(true);
-            anM.revalidate();
+            plnMenu.removeAll();
+            try {
+                this.anM = new ansichtMitarbeiter((Mitarbeiter) lstUebersicht.getSelectedValue());
+                plnMenu.add(anM);
+                anM.setSize(plnMenu.getWidth(), plnMenu.getHeight());
+                anM.setVisible(true);
+                anM.revalidate();
+            } catch (Exception e) {
+
+            }
         }
     }//GEN-LAST:event_lstUebersichtValueChanged
 
@@ -343,7 +356,7 @@ public class Hauptmenue extends javax.swing.JPanel {
                     DefaultListModel dfm = new DefaultListModel<>();
                     for (int i = 0; i < mitDefaultListModel.getSize(); i++) {
                         Mitarbeiter m = mitDefaultListModel.getElementAt(i);
-                        String vornachname = m.getVorname()+m.getNachname();
+                        String vornachname = m.getVorname() + m.getNachname();
                         if (vornachname.indexOf(txtSuche.getText()) != -1) {
                             dfm.addElement(m);
                         }

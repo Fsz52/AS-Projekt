@@ -31,15 +31,11 @@ public class ansichtMitarbeiter extends javax.swing.JPanel {
     }
 
     public void setInfos(Mitarbeiter m) {
-//        try{
         lblMitarbeitID.setText(String.valueOf(m.getMitarbeiterID()));
         txtVorname.setText(m.getVorname());
         txtNachname.setText(m.getNachname());
         txtAdresse.setText(m.getAddresse());
         txtBDay.setText(String.valueOf(m.getGeburtstag()));
-//        }catch(Exception e){
-//            System.out.println("Blub");
-//        }
     }
 
     /**

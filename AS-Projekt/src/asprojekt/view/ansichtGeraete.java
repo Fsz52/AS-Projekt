@@ -26,15 +26,11 @@ public class ansichtGeraete extends javax.swing.JPanel {
     }
 
     public void setInfos(Geraet g) {
-//        try{
         lblshowNameG.setText(g.getNetconfig().getDns_name());
         lblShSnNR.setText(g.getSn());
         lblshowPreis.setText(String.valueOf(g.getAnschPreis()));
         lblshowOrt.setText(g.getStandort());
         lblShowRaum.setText(g.getRaum().getRaumNr());
-//        }catch(Exception e){
-//            System.out.println("Bleb");
-//        }
     }
 
     /**
