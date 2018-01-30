@@ -5,6 +5,14 @@
  */
 package asprojekt.view;
 
+import asprojekt.control.MitarbeiterDAO;
+import asprojekt.model.Mitarbeiter;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.sql.Date;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JFrame;
 
 /**
@@ -13,14 +21,17 @@ import javax.swing.JFrame;
  */
 public class hinzuMitarbeiter extends javax.swing.JPanel {
 
-    private JFrame jf; 
+    private JFrame jf;
+    private Hauptmenue hauptmenue;
+
     public hinzuMitarbeiter() {
         initComponents();
     }
-   public void setJf(JFrame jf) {
+
+    public void setJf(JFrame jf) {
         this.jf = jf;
     }
-    
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -35,8 +46,6 @@ public class hinzuMitarbeiter extends javax.swing.JPanel {
         lblNachname = new javax.swing.JLabel();
         lblAdresse = new javax.swing.JLabel();
         lblBDay = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        txtID = new javax.swing.JTextField();
         txtVorname = new javax.swing.JTextField();
         txtNachname = new javax.swing.JTextField();
         txtAdresse = new javax.swing.JTextField();
@@ -54,18 +63,6 @@ public class hinzuMitarbeiter extends javax.swing.JPanel {
         lblAdresse.setText("Adresse");
 
         lblBDay.setText("Geburstag ");
-
-        jLabel5.setText("ID");
-
-        txtID.setText("jTextField1");
-
-        txtVorname.setText("jTextField2");
-
-        txtNachname.setText("jTextField3");
-
-        txtAdresse.setText("jTextField4");
-
-        txtBDay.setText("jTextField5");
 
         btnSpeichern.setText("Speichern ");
         btnSpeichern.addActionListener(new java.awt.event.ActionListener() {
@@ -99,35 +96,29 @@ public class hinzuMitarbeiter extends javax.swing.JPanel {
                         .addComponent(btnSpeichern)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(btnClose)
-                        .addGap(18, 18, 18)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(btnClear)
-                        .addContainerGap(147, Short.MAX_VALUE))
+                        .addGap(0, 145, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(lblVorname, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(lblNachname, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(lblAdresse, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(lblBDay, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtID)
                             .addComponent(txtVorname)
                             .addComponent(txtNachname)
                             .addComponent(txtAdresse)
-                            .addComponent(txtBDay))
-                        .addContainerGap())))
+                            .addComponent(txtBDay))))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel5)
-                    .addComponent(txtID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblVorname)
                     .addComponent(txtVorname, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -146,19 +137,36 @@ public class hinzuMitarbeiter extends javax.swing.JPanel {
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnSpeichern)
-                    .addComponent(btnClear)
-                    .addComponent(btnClose))
+                    .addComponent(btnClose)
+                    .addComponent(btnClear))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnSpeichernActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSpeichernActionPerformed
-        jf.dispose();
+        Mitarbeiter mitarbeiter = new Mitarbeiter();
+        MitarbeiterDAO mDAO = new MitarbeiterDAO();
+        try {
+            mitarbeiter.setVorname(txtVorname.getText());
+            mitarbeiter.setNachname(txtNachname.getText());
+            mitarbeiter.setAddresse(txtAdresse.getText());
+            DateFormat format = new SimpleDateFormat("dd.MM.yyyy");
+            Date gebDatum = (Date) format.parse(txtBDay.getText());
+            System.out.println(gebDatum);
+            mitarbeiter.setGeburtstag(gebDatum);
+
+            int mitarbeiterID = mDAO.addMitarbeiter(mitarbeiter);
+            mitarbeiter.setMitarbeiterID(mitarbeiterID);
+            jf.dispose();
+            hauptmenue.refreshMitarbeiterListe();
+        } catch (ParseException ex) {
+            Logger.getLogger(hinzuMitarbeiter.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_btnSpeichernActionPerformed
 
     private void btnCloseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCloseActionPerformed
         jf.dispose();
-        
+
 
     }//GEN-LAST:event_btnCloseActionPerformed
 
@@ -166,7 +174,6 @@ public class hinzuMitarbeiter extends javax.swing.JPanel {
         // TODO add your handling code here:
         txtAdresse.setText("");
         txtBDay.setText("");
-        txtID.setText("");
         txtNachname.setText("");
         txtVorname.setText("");
     }//GEN-LAST:event_btnClearActionPerformed
@@ -177,14 +184,12 @@ public class hinzuMitarbeiter extends javax.swing.JPanel {
     private javax.swing.JButton btnClose;
     private javax.swing.JButton btnSpeichern;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel lblAdresse;
     private javax.swing.JLabel lblBDay;
     private javax.swing.JLabel lblNachname;
     private javax.swing.JLabel lblVorname;
     private javax.swing.JTextField txtAdresse;
     private javax.swing.JTextField txtBDay;
-    private javax.swing.JTextField txtID;
     private javax.swing.JTextField txtNachname;
     private javax.swing.JTextField txtVorname;
     // End of variables declaration//GEN-END:variables

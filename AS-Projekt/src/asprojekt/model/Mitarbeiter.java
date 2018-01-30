@@ -27,6 +27,10 @@ public class Mitarbeiter {
         this.addresse = addresse;
     }
 
+    public Mitarbeiter() {
+    }
+    
+
     public int getMitarbeiterID() {
         return mitarbeiterID;
     }
