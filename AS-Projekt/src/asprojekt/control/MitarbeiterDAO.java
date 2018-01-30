@@ -43,19 +43,26 @@ public class MitarbeiterDAO extends AbstractDBConnector{
         return mas;
     }
     
-    public void addMitarbeiter(Mitarbeiter ma){
-        try {
-            Connection c = getConnection();
+    public int addMitarbeiter(Mitarbeiter ma){
+        Connection c = getConnection();
+        Integer id = null;
+        try {            
             PreparedStatement ps = c.prepareStatement("INSERT INTO T_Mitarbeiter (adresse, vorname, nachname, geburtstag) VALUES (?, ?, ?, ?)");
             ps.setString(1, ma.getAddresse());
             ps.setString(2, ma.getVorname());
             ps.setString(3, ma.getNachname());
             ps.setDate(4, ma.getGeburtstag());
             ps.executeQuery();
+            
+            PreparedStatement ps2 = c.prepareStatement("SELECT_LAST_INSERT_ID()");
+            ResultSet rs2 = ps2.executeQuery();
+            rs2.next();
+            id = rs2.getInt(1);
         } catch (SQLException ex) {
             Logger.getLogger(MitarbeiterDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
         closeConnection();
+        return id;
     }
     
     public void delMitarbeiter(Mitarbeiter ma){
