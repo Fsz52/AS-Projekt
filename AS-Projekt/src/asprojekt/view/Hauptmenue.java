@@ -44,7 +44,6 @@ public class Hauptmenue extends javax.swing.JPanel {
         auswahl.add(jbtnMitarbeiter);
 
         btnloeschen.setEnabled(false);
-        plnMenu.setBackground(Color.red);
         while (jbtnMitarbeiter.isSelected()) {
 
             btnWartungen.setEnabled(false);
@@ -207,7 +206,7 @@ public class Hauptmenue extends javax.swing.JPanel {
 
             hinzuGeraet hG = new hinzuGeraet();
             JFrame jf = new JFrame("Hinzufügen eines Gerätes");
-            jf.setSize(800, 250);
+            jf.setSize(800, 450);
             jf.add(hG);
             hG.setJf(jf);
             hG.setHauptmenue(this);
@@ -248,7 +247,7 @@ public class Hauptmenue extends javax.swing.JPanel {
 
     public void refreshGeraeteListe() {
         lstUebersicht.removeAll();
-        mitDefaultListModel.removeAllElements();
+        geraetListModel.removeAllElements();
         fillGeraete();
     }
 
@@ -314,8 +313,18 @@ public class Hauptmenue extends javax.swing.JPanel {
     }//GEN-LAST:event_txtSucheMouseClicked
 
     private void btnloeschenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnloeschenActionPerformed
-        //  while (lstUebersicht.getSelectedValue() != null) 
-        //   }
+        if (jbtnGeraete.isSelected()){
+            Geraet loeschG = (Geraet)lstUebersicht.getSelectedValue();
+            GeraetDAO gDAO = new GeraetDAO();
+            gDAO.delGeraet(loeschG);
+            refreshGeraeteListe();
+        }
+        if (jbtnMitarbeiter.isSelected()){
+            Mitarbeiter mit = (Mitarbeiter) lstUebersicht.getSelectedValue();
+            MitarbeiterDAO mDAO = new MitarbeiterDAO();
+            mDAO.delMitarbeiter(mit);
+            refreshMitarbeiterListe();
+        }
     }//GEN-LAST:event_btnloeschenActionPerformed
 
     private void btnWartungenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnWartungenActionPerformed

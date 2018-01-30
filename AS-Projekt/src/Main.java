@@ -9,14 +9,7 @@
  * @author Tim
  */
 import asprojekt.control.AbstractDBConnector;
-import asprojekt.control.SwitchDAO;
-import asprojekt.model.Port;
-import asprojekt.model.Switch;
 import asprojekt.view.Hauptmenue;
-import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.JFrame;
 
 public class Main {
@@ -34,7 +27,7 @@ public class Main {
 //                            } catch (SQLException ex) {
 //                                Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
 //                            }
-        JFrame jf = new JFrame("Krass Bruder");
+        JFrame jf = new JFrame("IT-Infrastruktur 2018");
 
         jf.setSize(800, 650);
         jf.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
