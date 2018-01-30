@@ -27,7 +27,7 @@ public class Main {
 //                            } catch (SQLException ex) {
 //                                Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
 //                            }
-        JFrame jf = new JFrame("Krass Bruder");
+        JFrame jf = new JFrame("IT-Infrastruktur 2018");
 
         jf.setSize(800, 650);
         jf.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
