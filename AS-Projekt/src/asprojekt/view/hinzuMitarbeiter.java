@@ -151,9 +151,8 @@ public class hinzuMitarbeiter extends javax.swing.JPanel {
             mitarbeiter.setNachname(txtNachname.getText());
             mitarbeiter.setAddresse(txtAdresse.getText());
             DateFormat format = new SimpleDateFormat("dd.MM.yyyy");
-            Date gebDatum = (Date) format.parse(txtBDay.getText());
-            System.out.println(gebDatum);
-            mitarbeiter.setGeburtstag(gebDatum);
+            java.util.Date gebDatum = format.parse(txtBDay.getText());
+            mitarbeiter.setGeburtstag((Date) gebDatum);
 
             int mitarbeiterID = mDAO.addMitarbeiter(mitarbeiter);
             mitarbeiter.setMitarbeiterID(mitarbeiterID);
