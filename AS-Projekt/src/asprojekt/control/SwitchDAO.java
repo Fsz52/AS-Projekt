@@ -27,8 +27,7 @@ public class SwitchDAO extends AbstractDBConnector {
         ArrayList<Port> ports = new ArrayList<>();
 
         try {
-            
-            
+
             PreparedStatement ps = c.prepareStatement("SELECT * FROM T_Switch");
             ResultSet rs = ps.executeQuery();
 
@@ -72,9 +71,9 @@ public class SwitchDAO extends AbstractDBConnector {
         closeConnection();
         return switche;
     }
-    
+
 //    public void addSwitch(Switch sw){
 //        Connection c= getConnection();
-//        PreparedStatement ps = c.prepareStatement("INSERT INTO T_SWITCH")
+//        PreparedStatement ps = c.prepareStatement("INSERT INTO T_Switch ")
 //    }
 }

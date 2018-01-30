@@ -73,12 +73,17 @@ public class GeraetDAO extends AbstractDBConnector {
             ps.setString(3, g.getStandort());
             ps.setDouble(4, g.getAnschPreis());
             ps.setBoolean(5, g.isIsSwitch());
-            ResultSet rs = ps.executeQuery();
+            ps.executeQuery();
 
             PreparedStatement ps2 = c.prepareStatement("SELECT LAST_INSERT_ID()");
             ResultSet rs2 = ps2.executeQuery();
             rs2.next();
             id = rs2.getInt(1);
+            
+            if(g.isIsSwitch()){
+//                PreparedStatement ps3 = c.prepareCall("")
+            }
+            
             return id;
 
         } catch (SQLException ex) {
@@ -87,16 +92,17 @@ public class GeraetDAO extends AbstractDBConnector {
         closeConnection();
         return id;
     }
-
+//  delGeraet löscht auch Switche und die Dazugehörigen Informationen wie Ports und Ports_Vlans
     public void delGeraet(Geraet g) {
         Connection c = getConnection();
         try {
-            PreparedStatement ps = c.prepareStatement("DELETE FROM T_Geraete WHERE p_gerate_id = ?");
+            PreparedStatement ps = c.prepareStatement("DELETE FROM T_Geraete WHERE p_geraete_id = ?");
             ps.setInt(1, g.getP_geraete_id());
-            ResultSet rs = ps.executeQuery();
+            ps.executeQuery();
         } catch (SQLException ex) {
             Logger.getLogger(GeraetDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
         closeConnection();
+        
     }
 }
