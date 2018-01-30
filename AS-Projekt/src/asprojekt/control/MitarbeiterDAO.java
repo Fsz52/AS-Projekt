@@ -42,4 +42,16 @@ public class MitarbeiterDAO extends AbstractDBConnector{
         return mas;
     }
     
+    public void delMitarbeiter(Mitarbeiter ma){
+        try {
+            Connection c = getConnection();
+            PreparedStatement ps = c.prepareStatement("DELETE FROM T_Mitarbeiter WHERE p_id = ?");
+            ps.setInt(1, ma.getMitarbeiterID());
+            ps.executeQuery();
+        } catch (SQLException ex) {
+            Logger.getLogger(MitarbeiterDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+    }
+    
 }
