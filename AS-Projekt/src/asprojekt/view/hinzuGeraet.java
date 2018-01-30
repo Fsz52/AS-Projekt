@@ -311,8 +311,9 @@ public class hinzuGeraet extends javax.swing.JPanel {
         } else {
             g.setIsSwitch(false);
         }
-        hauptmenue.refreshGeraeteListe();
+        
         jf.dispose();
+        hauptmenue.refreshGeraeteListe();
     }//GEN-LAST:event_btnSpeichernActionPerformed
 
     private void btnClearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClearActionPerformed

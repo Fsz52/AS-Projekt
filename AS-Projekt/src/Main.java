@@ -9,14 +9,7 @@
  * @author Tim
  */
 import asprojekt.control.AbstractDBConnector;
-import asprojekt.control.SwitchDAO;
-import asprojekt.model.Port;
-import asprojekt.model.Switch;
 import asprojekt.view.Hauptmenue;
-import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.JFrame;
 
 public class Main {
